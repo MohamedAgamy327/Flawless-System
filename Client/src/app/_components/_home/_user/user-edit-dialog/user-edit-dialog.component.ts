@@ -23,9 +23,8 @@ export class UserEditDialogComponent {
       id: [this.data.id],
       terminated: [this.data.terminated],
       name: [this.data.name, Validators.required],
-      email: [this.data.email, [Validators.required, Validators.email]],
-      mobileNumber: [this.data.mobileNumber,
-        [Validators.required, Validators.pattern('^[0-9]*$'), Validators.maxLength(11), Validators.minLength(11)]]
+      username: [this.data.username, [Validators.required, Validators.pattern('^[a-zA-Z][a-zA-Z0-9._-]+$')]],
+      role: [this.data.role]
     });
   }
 

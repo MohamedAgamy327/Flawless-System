@@ -1,48 +1,40 @@
 <div class="container">
-  <h3 mat-dialog-title>Edit Option User</h3>
+  <h3 mat-dialog-title>تعديل المستخدم</h3>
 
   <form autocomplete="off" class="mat-dialog-content" [formGroup]="editForm">
+
     <div>
       <mat-form-field>
-        <input matInput type="text" placeholder="Name" formControlName="name">
+        <input matInput type="text" placeholder="الاسم" formControlName="name">
         <mat-error *ngIf="errorHandling('name', 'required')">
           This field is required
         </mat-error>
       </mat-form-field>
     </div>
 
+
     <div>
       <mat-form-field>
-        <input matInput type="email" placeholder="Email" formControlName="email">
-        <mat-error *ngIf="errorHandling('email', 'required')">
+        <input matInput type="text" placeholder="المستخدم" formControlName="username">
+        <mat-error *ngIf="errorHandling('username', 'required')">
           This field is required
         </mat-error>
-        <mat-error *ngIf="errorHandling('email', 'email')">
-          Enter a valid email address
+        <mat-error *ngIf="errorHandling('username', 'pattern')">
+          Enter valid username
         </mat-error>
       </mat-form-field>
     </div>
 
-    <div>
-      <mat-form-field>
-        <input matInput type="text" placeholder="Mobile Number" formControlName="mobileNumber">
-        <mat-error *ngIf="errorHandling('mobileNumber', 'required')">
-          This field is required
-        </mat-error>
-        <mat-error *ngIf="errorHandling('mobileNumber', 'pattern')">
-          Enter only numeric
-        </mat-error>
-        <mat-error *ngIf="errorHandling('mobileNumber', 'minlength')">
-          Enter 11 numbers
-        </mat-error>
-        <mat-error *ngIf="errorHandling('mobileNumber', 'maxlength')">
-          Enter 11 numbers
-        </mat-error>
-      </mat-form-field>
-    </div>
+    <div class="form-margin">
+        <label>الصلاحية: </label>
+        <mat-radio-group formControlName="role">
+          <mat-radio-button value="doctor">دكتور</mat-radio-button>
+          <mat-radio-button value="nurse">ممرضه</mat-radio-button>
+        </mat-radio-group>
+      </div>
 
     <div>
-      <mat-checkbox formControlName="terminated">Terminated</mat-checkbox>
+      <mat-checkbox formControlName="terminated">انتهى عمله</mat-checkbox>
     </div>
 
     <div mat-dialog-actions>
