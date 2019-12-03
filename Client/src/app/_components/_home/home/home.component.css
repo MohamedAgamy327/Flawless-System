@@ -1,0 +1,16 @@
+.toolbar-fullscreen {
+  display: none;
+}
+
+.toolbar-filler {
+  flex: 1 1 auto
+}
+
+.toolbar{
+  background-color: #666666;
+  color: #ffffff ;
+}
+
+.active-list-item {
+  color: #3F51B5 !important; /* Note: You could also use a custom theme */
+}
