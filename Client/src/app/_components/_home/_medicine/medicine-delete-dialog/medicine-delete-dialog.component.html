@@ -1,0 +1,17 @@
+<div class="container">
+  <h3 mat-dialog-title>حذف الدواء</h3>
+
+  <div mat-dialog-content>
+    الاسم: {{data.name }}
+    <p></p>
+    النوع: {{data.type}}
+    <p></p>
+    الجرعه: {{data.drop}}
+    <p></p>
+  </div>
+
+  <div mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="confirmDelete()">حذف</button>
+    <button mat-raised-button color="warn" (click)="cancel()" tabindex="-1">إلغاء</button>
+  </div>
+</div>

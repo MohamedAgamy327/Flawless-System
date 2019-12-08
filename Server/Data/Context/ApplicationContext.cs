@@ -14,11 +14,21 @@ namespace Data.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            
             new UserMap(modelBuilder.Entity<User>());
+            new ItemMap(modelBuilder.Entity<Item>());      
+            new PatientMap(modelBuilder.Entity<Patient>());
+            new SpendingMap(modelBuilder.Entity<Spending>());
+            new MedicineMap(modelBuilder.Entity<Medicine>()); 
+            
             modelBuilder.Seed();
         }
 
-        public DbSet<User> Users { get; set; }
-
+        public DbSet<Item> Items { get; set; }
+        public DbSet<User> Users { get; set; } 
+        public DbSet<Patient> Patients { get; set; }
+        public DbSet<Spending> Spendings { get; set; }
+        public DbSet<Medicine> Medicines { get; set; } 
+       
     }
 }

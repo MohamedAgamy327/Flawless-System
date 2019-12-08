@@ -9,7 +9,10 @@ import { CredentialService } from 'src/app/_services';
 import {
   HomeComponent, LandingComponent, UserAddDialogComponent,
   UserChangePasswordDialogComponent, UserDeleteDialogComponent,
-  UserEditDialogComponent, UsersComponent
+  UserEditDialogComponent, UsersComponent,
+  ItemAddDialogComponent, ItemDeleteDialogComponent, ItemEditDialogComponent, ItemsComponent,
+  MedicineAddDialogComponent, MedicineDeleteDialogComponent, MedicineEditDialogComponent, MedicinesComponent
+
 } from '.';
 
 @NgModule({
@@ -19,11 +22,17 @@ import {
     HomeComponent,
     LandingComponent,
     UserChangePasswordDialogComponent, UserDeleteDialogComponent,
-    UserEditDialogComponent, UsersComponent, UserAddDialogComponent
+    UserEditDialogComponent, UsersComponent, UserAddDialogComponent,
+    ItemAddDialogComponent, ItemDeleteDialogComponent, ItemEditDialogComponent, ItemsComponent,
+    MedicineAddDialogComponent, MedicineDeleteDialogComponent, MedicineEditDialogComponent, MedicinesComponent
+
   ],
   entryComponents: [
     UserChangePasswordDialogComponent, UserDeleteDialogComponent,
-    UserEditDialogComponent, UserAddDialogComponent
+    UserEditDialogComponent, UserAddDialogComponent,
+    ItemAddDialogComponent, ItemDeleteDialogComponent, ItemEditDialogComponent,
+    MedicineAddDialogComponent, MedicineDeleteDialogComponent, MedicineEditDialogComponent
+
   ],
   imports: [
     CommonModule,

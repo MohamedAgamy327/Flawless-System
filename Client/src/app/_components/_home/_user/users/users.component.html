@@ -3,7 +3,7 @@
     <mat-form-field class="filter-input">
       <input autocomplete="off" matInput (keyup)="applyFilter($event.target.value)" placeholder="بحث">
     </mat-form-field>
-    <button class="add-input" mat-fab (click)="add()">
+    <button class="add-input" mat-fab (click)="add()" color="primary" >
       <mat-icon>add</mat-icon>
     </button>
   </div>
@@ -29,7 +29,7 @@
     <ng-container matColumnDef="edit">
       <th mat-header-cell *matHeaderCellDef> تعديل </th>
       <td mat-cell *matCellDef="let element">
-        <button mat-icon-button color="primary" (click)="edit(element)">
+        <button mat-icon-button color="accent" (click)="edit(element)">
           <mat-icon aria-label="Edit">edit</mat-icon>
         </button>
       </td>
@@ -47,7 +47,7 @@
     <ng-container matColumnDef="changePassword">
         <th mat-header-cell *matHeaderCellDef> تغير كلمة السر </th>
         <td mat-cell *matCellDef="let element">
-          <button mat-icon-button color="primary" (click)="changePassword(element.id)">
+          <button mat-icon-button color="accent" (click)="changePassword(element.id)">
             <mat-icon aria-label="Edit">security</mat-icon>
           </button>
         </td>

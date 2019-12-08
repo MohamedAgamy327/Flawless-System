@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using API.DTO.Users;
 using AutoMapper;
 using Domain.Entities;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Repository.IRepository;
 using Repository.UnitOfWork;

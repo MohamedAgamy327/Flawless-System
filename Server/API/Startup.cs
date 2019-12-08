@@ -38,6 +38,11 @@ namespace API
             services.AddScoped<IUnitOfWork, UnitOfWork>();        
             services.AddTransient<IJWTManager, JWTManager>();
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IItemRepository, ItemRepository>();    
+            services.AddScoped<IPatientRepository, PatientRepository>();
+            services.AddScoped<ISpendingRepository, SpendingRepository>();
+            services.AddScoped<IMedicineRepository, MedicineRepository>();
+            services.AddScoped<ISpendingRepository, SpendingRepository>();
 
             services.AddAutoMapper(typeof(Startup));
             services.AddControllers();
