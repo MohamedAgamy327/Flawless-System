@@ -2,6 +2,7 @@
 {
     public class SpendingForAddDTO
     {
-        public string statement { get; set; }
+        public string Statement { get; set; }
+        public decimal Amount { get; set; }
     }
 }

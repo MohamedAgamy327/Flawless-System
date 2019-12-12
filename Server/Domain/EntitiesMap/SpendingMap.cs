@@ -9,7 +9,8 @@ namespace Domain.EntitiesMap
         public SpendingMap(EntityTypeBuilder<Spending> entityBuilder)
         {
             entityBuilder.HasKey(t => t.Id);
-            entityBuilder.Property(t => t.statement).IsRequired();
+            entityBuilder.Property(t => t.Statement).IsRequired();
+            entityBuilder.Property(t => t.Amount).IsRequired();
             entityBuilder.Property(t => t.Date).HasDefaultValueSql("getdate()");
         }
     }

@@ -17,3 +17,7 @@ export * from './_patient/patient-add-dialog/patient-add-dialog.component';
 export * from './_patient/patient-delete-dialog/patient-delete-dialog.component';
 export * from './_patient/patient-edit-dialog/patient-edit-dialog.component';
 export * from './_patient/patients/patients.component';
+export * from './_spending/spending-add-dialog/spending-add-dialog.component';
+export * from './_spending/spending-delete-dialog/spending-delete-dialog.component';
+export * from './_spending/spending-edit-dialog/spending-edit-dialog.component';
+export * from './_spending/spendings/spendings.component';
