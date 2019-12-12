@@ -11,8 +11,8 @@ import {
   UserChangePasswordDialogComponent, UserDeleteDialogComponent,
   UserEditDialogComponent, UsersComponent,
   ItemAddDialogComponent, ItemDeleteDialogComponent, ItemEditDialogComponent, ItemsComponent,
-  MedicineAddDialogComponent, MedicineDeleteDialogComponent, MedicineEditDialogComponent, MedicinesComponent
-
+  MedicineAddDialogComponent, MedicineDeleteDialogComponent, MedicineEditDialogComponent, MedicinesComponent,
+  PatientAddDialogComponent, PatientDeleteDialogComponent, PatientEditDialogComponent, PatientsComponent
 } from '.';
 
 @NgModule({
@@ -24,14 +24,16 @@ import {
     UserChangePasswordDialogComponent, UserDeleteDialogComponent,
     UserEditDialogComponent, UsersComponent, UserAddDialogComponent,
     ItemAddDialogComponent, ItemDeleteDialogComponent, ItemEditDialogComponent, ItemsComponent,
-    MedicineAddDialogComponent, MedicineDeleteDialogComponent, MedicineEditDialogComponent, MedicinesComponent
+    MedicineAddDialogComponent, MedicineDeleteDialogComponent, MedicineEditDialogComponent, MedicinesComponent,
+    PatientAddDialogComponent, PatientDeleteDialogComponent, PatientEditDialogComponent, PatientsComponent
 
   ],
   entryComponents: [
     UserChangePasswordDialogComponent, UserDeleteDialogComponent,
     UserEditDialogComponent, UserAddDialogComponent,
     ItemAddDialogComponent, ItemDeleteDialogComponent, ItemEditDialogComponent,
-    MedicineAddDialogComponent, MedicineDeleteDialogComponent, MedicineEditDialogComponent
+    MedicineAddDialogComponent, MedicineDeleteDialogComponent, MedicineEditDialogComponent,
+    PatientAddDialogComponent, PatientDeleteDialogComponent, PatientEditDialogComponent
 
   ],
   imports: [

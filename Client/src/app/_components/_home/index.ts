@@ -13,3 +13,7 @@ export * from './_medicine/medicine-add-dialog/medicine-add-dialog.component';
 export * from './_medicine/medicine-delete-dialog/medicine-delete-dialog.component';
 export * from './_medicine/medicine-edit-dialog/medicine-edit-dialog.component';
 export * from './_medicine/medicines/medicines.component';
+export * from './_patient/patient-add-dialog/patient-add-dialog.component';
+export * from './_patient/patient-delete-dialog/patient-delete-dialog.component';
+export * from './_patient/patient-edit-dialog/patient-edit-dialog.component';
+export * from './_patient/patients/patients.component';
