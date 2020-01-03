@@ -1,5 +1,7 @@
-﻿using API.DTO.Items;
+﻿using API.DTO.Frequency;
+using API.DTO.Items;
 using API.DTO.Medicines;
+using API.DTO.MedicineType;
 using API.DTO.Patients;
 using API.DTO.Spendings;
 using API.DTO.Users;
@@ -24,9 +26,13 @@ namespace API.Helpers
             CreateMap<PatientForEditDTO, Patient>();
             CreateMap<SpendingForAddDTO, Spending>();
             CreateMap<SpendingForEditDTO, Spending>();
-
+            CreateMap<FrequencyForAddDTO, Frequency>();
+            CreateMap<FrequencyForEditDTO, Frequency>();
+            CreateMap<MedicineTypeForAddDTO, MedicineType>();
+            CreateMap<MedicineTypeForEditDTO, MedicineType>();
             // Entity to DTO
-
+            CreateMap<Frequency, FrequencyForGetDTO>();
+            CreateMap<MedicineType, MedicineTypeForGetDTO>();
             CreateMap<User, UserForGetDTO>()
                    .ForMember(dest => dest.Role, opt => opt.MapFrom(src => src.Role.ToString()));
             CreateMap<Medicine, MedicineForGetDTO>();

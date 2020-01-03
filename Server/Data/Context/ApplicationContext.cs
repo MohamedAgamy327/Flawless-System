@@ -14,7 +14,10 @@ namespace Data.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            
+
+            new FrequencyMap(modelBuilder.Entity<Frequency>());
+            new MedicineTypeMap(modelBuilder.Entity<MedicineType>());
+
             new UserMap(modelBuilder.Entity<User>());
             new ItemMap(modelBuilder.Entity<Item>());      
             new PatientMap(modelBuilder.Entity<Patient>());
@@ -28,7 +31,9 @@ namespace Data.Context
         public DbSet<User> Users { get; set; } 
         public DbSet<Patient> Patients { get; set; }
         public DbSet<Spending> Spendings { get; set; }
-        public DbSet<Medicine> Medicines { get; set; } 
-       
+        public DbSet<Medicine> Medicines { get; set; }
+        public DbSet<Frequency> Frequencys { get; set; }
+        public DbSet<MedicineType> MedicineTypes { get; set; }
+
     }
 }

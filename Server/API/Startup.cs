@@ -38,7 +38,9 @@ namespace API
             services.AddScoped<IUnitOfWork, UnitOfWork>();        
             services.AddTransient<IJWTManager, JWTManager>();
             services.AddScoped<IUserRepository, UserRepository>();
-            services.AddScoped<IItemRepository, ItemRepository>();    
+            services.AddScoped<IItemRepository, ItemRepository>();
+            services.AddScoped<IFrequencyRepository, FrequencyRepository>();
+            services.AddScoped<IMedicineTypeRepository, MedicineTypeRepository>();
             services.AddScoped<IPatientRepository, PatientRepository>();
             services.AddScoped<ISpendingRepository, SpendingRepository>();
             services.AddScoped<IMedicineRepository, MedicineRepository>();
