@@ -1,6 +1,6 @@
-﻿namespace API.DTO.MedicineType
+﻿namespace Domain.Entities
 {
-    public class MedicineTypeForEditDTO
+    public class Test
     {
         public int Id { get; set; }
         public string Name { get; set; }

@@ -4,6 +4,7 @@ using API.DTO.Medicines;
 using API.DTO.MedicineType;
 using API.DTO.Patients;
 using API.DTO.Spendings;
+using API.DTO.Test;
 using API.DTO.Users;
 using AutoMapper;
 using Domain.Entities;
@@ -18,20 +19,24 @@ namespace API.Helpers
 
             CreateMap<UserForAddDTO, User>();
             CreateMap<UserForEditDTO, User>();
-            CreateMap<MedicineForAddDTO, Medicine>();
-            CreateMap<MedicineForEditDTO, Medicine>();
             CreateMap<ItemForAddDTO, Item>();
             CreateMap<ItemForEditDTO, Item>();
+            CreateMap<TestForAddDTO, Test>();
+            CreateMap<TestForEditDTO, Test>();
             CreateMap<PatientForAddDTO, Patient>();
             CreateMap<PatientForEditDTO, Patient>();
+            CreateMap<MedicineForAddDTO, Medicine>();
+            CreateMap<MedicineForEditDTO, Medicine>();
             CreateMap<SpendingForAddDTO, Spending>();
             CreateMap<SpendingForEditDTO, Spending>();
             CreateMap<FrequencyForAddDTO, Frequency>();
             CreateMap<FrequencyForEditDTO, Frequency>();
             CreateMap<MedicineTypeForAddDTO, MedicineType>();
             CreateMap<MedicineTypeForEditDTO, MedicineType>();
+
             // Entity to DTO
             CreateMap<Frequency, FrequencyForGetDTO>();
+            CreateMap<Test, TestForGetDTO>();
             CreateMap<MedicineType, MedicineTypeForGetDTO>();
             CreateMap<User, UserForGetDTO>()
                    .ForMember(dest => dest.Role, opt => opt.MapFrom(src => src.Role.ToString()));

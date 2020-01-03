@@ -39,13 +39,13 @@ namespace API
             services.AddTransient<IJWTManager, JWTManager>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IItemRepository, ItemRepository>();
-            services.AddScoped<IFrequencyRepository, FrequencyRepository>();
-            services.AddScoped<IMedicineTypeRepository, MedicineTypeRepository>();
+            services.AddScoped<ITestRepository, TestRepository>();
             services.AddScoped<IPatientRepository, PatientRepository>();
             services.AddScoped<ISpendingRepository, SpendingRepository>();
             services.AddScoped<IMedicineRepository, MedicineRepository>();
             services.AddScoped<ISpendingRepository, SpendingRepository>();
-
+            services.AddScoped<IFrequencyRepository, FrequencyRepository>();
+            services.AddScoped<IMedicineTypeRepository, MedicineTypeRepository>();
             services.AddAutoMapper(typeof(Startup));
             services.AddControllers();
             services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
@@ -133,7 +133,6 @@ namespace API
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
-                // c.SwaggerEndpoint("/vcarapi/swagger/v1/swagger.json", "My API V1");
             });
 
             app.UseEndpoints(endpoints =>

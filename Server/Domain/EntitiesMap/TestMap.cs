@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Domain.EntitiesMap
 {
-    public class FrequencyMap
+    public class TestMap
     {
-        public FrequencyMap(EntityTypeBuilder<Frequency> entityBuilder)
+        public TestMap(EntityTypeBuilder<Test> entityBuilder)
         {
             entityBuilder.HasKey(t => t.Id);
             entityBuilder.Property(t => t.Name).IsRequired();
