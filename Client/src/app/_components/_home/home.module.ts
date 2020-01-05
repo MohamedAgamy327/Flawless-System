@@ -1,4 +1,5 @@
 import { RolePipe } from './../../_custom-pipes/role.pipe';
+import { GenderPipe } from 'src/app/_custom-pipes/gender.pipe';
 import { AngularMaterialModule } from 'src/app/shared/material.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -13,13 +14,18 @@ import {
   ItemAddDialogComponent, ItemDeleteDialogComponent, ItemEditDialogComponent, ItemsComponent,
   MedicineAddDialogComponent, MedicineDeleteDialogComponent, MedicineEditDialogComponent, MedicinesComponent,
   PatientAddDialogComponent, PatientDeleteDialogComponent, PatientEditDialogComponent, PatientsComponent,
-  SpendingAddDialogComponent, SpendingDeleteDialogComponent, SpendingEditDialogComponent, SpendingsComponent
+  SpendingAddDialogComponent, SpendingDeleteDialogComponent, SpendingEditDialogComponent, SpendingsComponent,
+  TestsComponent, TestAddDialogComponent, TestEditDialogComponent, TestDeleteDialogComponent,
+  DiagnosissComponent, DiagnosisAddDialogComponent, DiagnosisEditDialogComponent, DiagnosisDeleteDialogComponent,
+  FrequencysComponent, FrequencyAddDialogComponent, FrequencyEditDialogComponent, FrequencyDeleteDialogComponent
 } from '.';
+
 
 @NgModule({
   declarations: [
     AddSpacePipe,
     RolePipe,
+    GenderPipe,
     HomeComponent,
     LandingComponent,
     UserChangePasswordDialogComponent, UserDeleteDialogComponent,
@@ -27,8 +33,10 @@ import {
     ItemAddDialogComponent, ItemDeleteDialogComponent, ItemEditDialogComponent, ItemsComponent,
     MedicineAddDialogComponent, MedicineDeleteDialogComponent, MedicineEditDialogComponent, MedicinesComponent,
     PatientAddDialogComponent, PatientDeleteDialogComponent, PatientEditDialogComponent, PatientsComponent,
-    SpendingAddDialogComponent, SpendingDeleteDialogComponent, SpendingEditDialogComponent, SpendingsComponent
-
+    SpendingAddDialogComponent, SpendingDeleteDialogComponent, SpendingEditDialogComponent, SpendingsComponent,
+    TestsComponent, TestAddDialogComponent, TestEditDialogComponent, TestDeleteDialogComponent,
+    DiagnosissComponent, DiagnosisAddDialogComponent, DiagnosisEditDialogComponent, DiagnosisDeleteDialogComponent,
+    FrequencysComponent, FrequencyAddDialogComponent, FrequencyEditDialogComponent, FrequencyDeleteDialogComponent
   ],
   entryComponents: [
     UserChangePasswordDialogComponent, UserDeleteDialogComponent,
@@ -36,7 +44,10 @@ import {
     ItemAddDialogComponent, ItemDeleteDialogComponent, ItemEditDialogComponent,
     MedicineAddDialogComponent, MedicineDeleteDialogComponent, MedicineEditDialogComponent,
     PatientAddDialogComponent, PatientDeleteDialogComponent, PatientEditDialogComponent,
-    SpendingAddDialogComponent, SpendingDeleteDialogComponent, SpendingEditDialogComponent
+    SpendingAddDialogComponent, SpendingDeleteDialogComponent, SpendingEditDialogComponent,
+    TestAddDialogComponent, TestEditDialogComponent, TestDeleteDialogComponent,
+    DiagnosisAddDialogComponent, DiagnosisEditDialogComponent, DiagnosisDeleteDialogComponent
+    , FrequencyAddDialogComponent, FrequencyEditDialogComponent, FrequencyDeleteDialogComponent
   ],
   imports: [
     CommonModule,
