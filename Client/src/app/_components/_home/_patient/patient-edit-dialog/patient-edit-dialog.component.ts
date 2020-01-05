@@ -22,9 +22,10 @@ export class PatientEditDialogComponent {
     this.editForm = this.formBuilder.group({
       id: [this.data.id],
       name: [this.data.name, Validators.required],
-      telephone: [this.data.telephone, Validators.required],
+      telephone: [this.data.telephone],
+      address: [this.data.address],
       gender: [this.data.gender, Validators.required],
-      birthday: [this.data.birthday, Validators.required]
+      birthday: [this.data.birthday]
     });
   }
 

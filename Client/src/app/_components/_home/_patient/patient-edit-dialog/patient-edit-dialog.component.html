@@ -22,6 +22,15 @@
       </mat-form-field>
     </div>
 
+    <div>
+      <mat-form-field>
+        <input matInput type="text" placeholder="العنوان" formControlName="address">
+        <mat-error *ngIf="errorHandling('address', 'required')">
+          This field is required
+        </mat-error>
+      </mat-form-field>
+    </div>
+
     <div class="form-margin">
       <label>النوع: </label>
       <mat-radio-group formControlName="gender">
@@ -32,10 +41,11 @@
 
     <div>
       <mat-form-field>
-        <input matInput type="date" placeholder="تاريخ الميلاد" formControlName="birthday">
-        <mat-error *ngIf="errorHandling('birthday', 'required')">
-          This field is required
-        </mat-error>
+        <input matInput formControlName="birthday" [matDatepicker]="pickerBirthday" placeholder="تاريخ الميلاد">
+        <mat-datepicker-toggle matSuffix [for]="pickerBirthday">
+          <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+        </mat-datepicker-toggle>
+        <mat-datepicker #pickerBirthday></mat-datepicker>
       </mat-form-field>
     </div>
 

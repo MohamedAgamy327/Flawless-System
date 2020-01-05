@@ -22,7 +22,6 @@ export class UserAddDialogComponent {
   createForm() {
     this.addForm = this.formBuilder.group({
       name: ['', Validators.required],
-      username: ['', [Validators.required, Validators.pattern('^[a-zA-Z][a-zA-Z0-9._-]+$')]],
       role: ['nurse'],
       password: ['', [Validators.required, Validators.minLength(6)]],
       confirmPassword: ['', [Validators.required]]

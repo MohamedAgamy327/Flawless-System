@@ -1,5 +1,3 @@
 export enum RoleEnum {
-
-  admin, doctor, nurse
-
+  doctor, nurse
 }

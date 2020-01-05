@@ -12,38 +12,57 @@
 
       <a mat-list-item class="sidenav-link" [routerLink]="['/home']" [routerLinkActiveOptions]="{exact:true}"
         routerLinkActive="active-list-item" (click)="sidenav.toggle()">
-        <mat-icon mat-list-icon>home</mat-icon>
-        <span class="title" mat-line>الرئيسية</span>
+        <span class="title" mat-line> الرئيسية</span>
       </a>
 
       <a mat-list-item class="sidenav-link" [routerLink]="['/home/users']" [routerLinkActiveOptions]="{exact:true}"
         routerLinkActive="active-list-item" (click)="sidenav.toggle()">
-        <mat-icon mat-list-icon>person_pin</mat-icon>
         <span class="title" mat-line>المستخدمين</span>
-      </a>
-
-      <a mat-list-item class="sidenav-link" [routerLink]="['/home/medicines']" [routerLinkActiveOptions]="{exact:true}"
-        routerLinkActive="active-list-item" (click)="sidenav.toggle()">
-        <mat-icon mat-list-icon>timelapse</mat-icon>
-        <span class="title" mat-line>الأدوية</span>
-      </a>
-
-      <a mat-list-item class="sidenav-link" [routerLink]="['/home/items']" [routerLinkActiveOptions]="{exact:true}"
-        routerLinkActive="active-list-item" (click)="sidenav.toggle()">
-        <mat-icon mat-list-icon>subject</mat-icon>
-        <span class="title" mat-line>الاصناف</span>
       </a>
 
       <a mat-list-item class="sidenav-link" [routerLink]="['/home/patients']" [routerLinkActiveOptions]="{exact:true}"
         routerLinkActive="active-list-item" (click)="sidenav.toggle()">
-        <mat-icon mat-list-icon>person_outline</mat-icon>
-        <span class="title" mat-line>المرضى</span>
+        <span class="title" mat-line >المرضى</span>
       </a>
 
-      <a mat-list-item class="sidenav-link" [routerLink]="['/home/spendings']" [routerLinkActiveOptions]="{exact:true}"
+      <a mat-list-item class="sidenav-link" [routerLink]="['/home/tests']" [routerLinkActiveOptions]="{exact:true}"
         routerLinkActive="active-list-item" (click)="sidenav.toggle()">
-        <mat-icon mat-list-icon>attach_money</mat-icon>
+        <span class="title" mat-line>التحاليل</span>
+      </a>
+
+      <a mat-list-item class="sidenav-link" [routerLink]="['/home/diagnosis']" [routerLinkActiveOptions]="{exact:true}"
+        routerLinkActive="active-list-item" (click)="sidenav.toggle()">
+        <span class="title" mat-line>التشخيصات</span>
+      </a>
+
+      <a mat-list-item class="sidenav-link" [routerLink]="['/home/frequency']" [routerLinkActiveOptions]="{exact:true}"
+        routerLinkActive="active-list-item" (click)="sidenav.toggle()">
+        <span class="title" mat-line>الجرعات</span>
+      </a>
+
+      <a mat-list-item class="sidenav-link" [routerLink]="['/home/medicinestypes']" [routerLinkActiveOptions]="{exact:true}"
+        routerLinkActive="active-list-item" (click)="sidenav.toggle()">
+        <span class="title" mat-line>انواع الأدويه</span>
+      </a>
+
+      <a mat-list-item class="sidenav-link" [routerLink]="['/home/medicines']" [routerLinkActiveOptions]="{exact:true}"
+        routerLinkActive="active-list-item" (click)="sidenav.toggle()">
+        <span class="title" mat-line>الأدوية</span>
+      </a>
+
+      <a mat-list-item class="sidenav-link" [routerLink]="['/home/spending']" [routerLinkActiveOptions]="{exact:true}"
+        routerLinkActive="active-list-item" (click)="sidenav.toggle()">
         <span class="title" mat-line>المصروفات</span>
+      </a>
+
+      <a mat-list-item class="sidenav-link" [routerLink]="['/home/items']" [routerLinkActiveOptions]="{exact:true}"
+        routerLinkActive="active-list-item" (click)="sidenav.toggle()">
+        <span class="title" mat-line>الاصناف</span>
+      </a>
+
+      <a mat-list-item class="sidenav-link" [routerLink]="['/home/supplies']" [routerLinkActiveOptions]="{exact:true}"
+        routerLinkActive="active-list-item" (click)="sidenav.toggle()">
+        <span class="title" mat-line>التوريدات</span>
       </a>
 
     </mat-nav-list>

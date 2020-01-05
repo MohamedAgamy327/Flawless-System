@@ -21,8 +21,9 @@ export class PatientAddDialogComponent {
   createForm() {
     this.addForm = this.formBuilder.group({
       name: ['', Validators.required],
-      telephone: ['', [Validators.required]],
-      birthday: ['', [Validators.required]],
+      telephone: [''],
+      address: [''],
+      birthday: [],
       gender: ['male', [Validators.required]]
     }
     );

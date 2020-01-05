@@ -19,7 +19,7 @@ export class UsersComponent implements OnInit {
 
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
-  displayedColumns: string[] = ['name', 'username', 'role', 'edit', 'delete', 'changePassword'];
+  displayedColumns: string[] = ['name', 'role', 'edit', 'delete', 'changePassword'];
   users: User[];
   dataSource = new MatTableDataSource<User>();
 
