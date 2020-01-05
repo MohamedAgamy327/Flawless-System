@@ -36,9 +36,9 @@ namespace Repository.Repository
             return await context.Users.ToListAsync();
         }
 
-        public async Task<User> Login(string username, string password)
+        public async Task<User> Login(string name, string password)
         {
-            var optionUser = await context.Users.FirstOrDefaultAsync(x => x.Username == username);
+            var optionUser = await context.Users.FirstOrDefaultAsync(x => x.Name == name);
 
             if (optionUser == null)
                 return null;

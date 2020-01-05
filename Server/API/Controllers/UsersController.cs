@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using API.DTO.Users;
+using API.DTO.User;
 using AutoMapper;
 using Domain.Entities;
 using Microsoft.AspNetCore.Mvc;

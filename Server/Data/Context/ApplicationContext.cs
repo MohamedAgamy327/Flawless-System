@@ -18,10 +18,13 @@ namespace Data.Context
             new UserMap(modelBuilder.Entity<User>());
             new ItemMap(modelBuilder.Entity<Item>());
             new TestMap(modelBuilder.Entity<Test>());
+            new SupplyMap(modelBuilder.Entity<Supply>());
             new PatientMap(modelBuilder.Entity<Patient>());
             new SpendingMap(modelBuilder.Entity<Spending>());
-            new MedicineMap(modelBuilder.Entity<Medicine>());
+            new MedicineMap(modelBuilder.Entity<Medicine>());         
             new FrequencyMap(modelBuilder.Entity<Frequency>());
+            new DiagnosisMap(modelBuilder.Entity<Diagnosis>());
+            new SupplyItemMap(modelBuilder.Entity<SupplyItem>());
             new MedicineTypeMap(modelBuilder.Entity<MedicineType>());
 
             modelBuilder.Seed();
@@ -30,10 +33,13 @@ namespace Data.Context
         public DbSet<Item> Items { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Test> Tests { get; set; }
+        public DbSet<Supply> Supplys { get; set; }
         public DbSet<Patient> Patients { get; set; }
         public DbSet<Spending> Spendings { get; set; }
         public DbSet<Medicine> Medicines { get; set; }
         public DbSet<Frequency> Frequencys { get; set; }
+        public DbSet<Diagnosis> Diagnosiss { get; set; }
+        public DbSet<SupplyItem> SupplysItems { get; set; }
         public DbSet<MedicineType> MedicineTypes { get; set; }
 
     }

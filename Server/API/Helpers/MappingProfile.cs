@@ -1,11 +1,13 @@
-﻿using API.DTO.Frequency;
+﻿using API.DTO.Diagnosis;
+using API.DTO.Frequency;
 using API.DTO.Items;
 using API.DTO.Medicines;
 using API.DTO.MedicineType;
 using API.DTO.Patients;
 using API.DTO.Spendings;
+using API.DTO.Supply;
 using API.DTO.Test;
-using API.DTO.Users;
+using API.DTO.User;
 using AutoMapper;
 using Domain.Entities;
 
@@ -19,32 +21,52 @@ namespace API.Helpers
 
             CreateMap<UserForAddDTO, User>();
             CreateMap<UserForEditDTO, User>();
+
             CreateMap<ItemForAddDTO, Item>();
             CreateMap<ItemForEditDTO, Item>();
+            
             CreateMap<TestForAddDTO, Test>();
             CreateMap<TestForEditDTO, Test>();
+            
             CreateMap<PatientForAddDTO, Patient>();
             CreateMap<PatientForEditDTO, Patient>();
+            
             CreateMap<MedicineForAddDTO, Medicine>();
             CreateMap<MedicineForEditDTO, Medicine>();
+            
             CreateMap<SpendingForAddDTO, Spending>();
             CreateMap<SpendingForEditDTO, Spending>();
+            
             CreateMap<FrequencyForAddDTO, Frequency>();
             CreateMap<FrequencyForEditDTO, Frequency>();
+            
+            CreateMap<DiagnosisForAddDTO, Diagnosis>();
+            CreateMap<DiagnosisForEditDTO, Diagnosis>();
+            
             CreateMap<MedicineTypeForAddDTO, MedicineType>();
             CreateMap<MedicineTypeForEditDTO, MedicineType>();
 
+            CreateMap<SupplyItemForAddDTO, SupplyItem>();
+            CreateMap<SupplyForAddDTO, Supply>()
+                     .ForMember(x => x.SupplyItems, opt => opt.Ignore());
+
             // Entity to DTO
-            CreateMap<Frequency, FrequencyForGetDTO>();
+
             CreateMap<Test, TestForGetDTO>();
-            CreateMap<MedicineType, MedicineTypeForGetDTO>();
-            CreateMap<User, UserForGetDTO>()
-                   .ForMember(dest => dest.Role, opt => opt.MapFrom(src => src.Role.ToString()));
-            CreateMap<Medicine, MedicineForGetDTO>();
+            CreateMap<User, UserForGetDTO>();
             CreateMap<Item, ItemForGetDTO>();
-            CreateMap<Patient, PatientForGetDTO>()
-                 .ForMember(dest => dest.Gender, opt => opt.MapFrom(src => src.Gender.ToString()));
-            CreateMap<Spending, SpendingForGetDTO>();
+            CreateMap<Supply, SupplyForGetDTO>();
+            CreateMap<Patient, PatientForGetDTO>();
+            CreateMap<Diagnosis, DiagnosisForGetDTO>();
+            CreateMap<Frequency, FrequencyForGetDTO>();
+            CreateMap<MedicineType, MedicineTypeForGetDTO>();
+            CreateMap<SupplyItem, SupplyItemForGetDTO>()
+                  .ForMember(dest => dest.Item, opt => opt.MapFrom(src => src.Item.Name));       
+            CreateMap<Spending, SpendingForGetDTO>()
+                  .ForMember(dest => dest.User, opt => opt.MapFrom(src => src.User.Name));
+            CreateMap<Medicine, MedicineForGetDTO>()
+               .ForMember(dest => dest.Frequency, opt => opt.MapFrom(src => src.Frequency.Name))
+               .ForMember(dest => dest.MedicineType, opt => opt.MapFrom(src => src.MedicineType.Name));       
         }
 
     }

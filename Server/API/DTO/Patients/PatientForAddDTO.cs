@@ -8,5 +8,6 @@ namespace API.DTO.Patients
         public string Telephone { get; set; }
         public DateTime Birthday { get; set; }
         public string Gender { get; set; }
+        public string Address { get; set; }
     }
 }

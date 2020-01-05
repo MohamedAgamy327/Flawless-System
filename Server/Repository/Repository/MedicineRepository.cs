@@ -15,7 +15,6 @@ namespace Repository.Repository
         {
             this.context = context;
         }
-
         public async Task<Medicine> Add(Medicine medicine)
         {
             await context.Medicines.AddAsync(medicine);
@@ -28,13 +27,12 @@ namespace Repository.Repository
         }
         public async Task<Medicine> Get(int id)
         {
-            return await context.Medicines.AsNoTracking().SingleOrDefaultAsync(s => s.Id == id);
+            return await context.Medicines.Include(o => o.MedicineType).Include(k => k.Frequency).AsNoTracking().SingleOrDefaultAsync(s => s.Id == id);
         }
         public async Task<IEnumerable<Medicine>> Get()
         {
-            return await context.Medicines.ToListAsync();
+            return await context.Medicines.Include(o => o.MedicineType).Include(k => k.Frequency).ToListAsync();
         }
-
         public void Remove(Medicine medicine)
         {
             context.Remove(medicine);

@@ -28,6 +28,7 @@ namespace API.Controllers
         public async Task<IActionResult> Post(SpendingForAddDTO model)
         {
             Spending spending = mapper.Map<Spending>(model);
+            spending.UserId = 1;
             await spendingRepository.Add(spending).ConfigureAwait(true);
             await unitOfWork.CompleteAsync().ConfigureAwait(true);
             return Ok(mapper.Map<SpendingForGetDTO>(await spendingRepository.Get(spending.Id).ConfigureAwait(true)));
@@ -39,6 +40,7 @@ namespace API.Controllers
             Spending oldSpending = await spendingRepository.Get(model.Id).ConfigureAwait(true);
             Spending spending = mapper.Map<Spending>(model);
             spending.Date = oldSpending.Date;
+            spending.UserId = oldSpending.UserId;
             spendingRepository.Edit(spending);
             await unitOfWork.CompleteAsync().ConfigureAwait(true);
             return Ok(mapper.Map<SpendingForGetDTO>(await spendingRepository.Get(spending.Id).ConfigureAwait(true)));

@@ -9,8 +9,8 @@ namespace Domain.EntitiesMap
         {
             entityBuilder.HasKey(t => t.Id);
             entityBuilder.Property(t => t.Name).IsRequired();
-            entityBuilder.Property(t => t.Drop).IsRequired();
-            entityBuilder.Property(t => t.Type).IsRequired();
+            entityBuilder.HasOne(h => h.MedicineType).WithMany(w => w.Medicines).HasForeignKey(h => h.MedicineTypeId);
+            entityBuilder.HasOne(h => h.Frequency).WithMany(w => w.Medicines).HasForeignKey(h => h.FrequencyId);
         }
     }
 }

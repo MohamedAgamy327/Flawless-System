@@ -40,12 +40,16 @@ namespace API
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IItemRepository, ItemRepository>();
             services.AddScoped<ITestRepository, TestRepository>();
+            services.AddScoped<ISupplyRepository, SupplyRepository>();
             services.AddScoped<IPatientRepository, PatientRepository>();
             services.AddScoped<ISpendingRepository, SpendingRepository>();
             services.AddScoped<IMedicineRepository, MedicineRepository>();
             services.AddScoped<ISpendingRepository, SpendingRepository>();
             services.AddScoped<IFrequencyRepository, FrequencyRepository>();
+            services.AddScoped<IDiagnosisRepository, DiagnosisRepository>();
+            services.AddScoped<ISupplyItemRepository, SupplyItemRepository>();
             services.AddScoped<IMedicineTypeRepository, MedicineTypeRepository>();
+
             services.AddAutoMapper(typeof(Startup));
             services.AddControllers();
             services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));

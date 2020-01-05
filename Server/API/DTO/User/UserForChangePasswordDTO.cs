@@ -1,4 +1,4 @@
-﻿namespace API.DTO.Users
+﻿namespace API.DTO.User
 {
     public class UserForChangePasswordDTO
     {

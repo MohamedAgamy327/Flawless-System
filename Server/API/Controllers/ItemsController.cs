@@ -36,7 +36,10 @@ namespace API.Controllers
         [HttpPut]
         public async Task<IActionResult> Put(ItemForEditDTO model)
         {
+            Item oldItem = await itemRepository.Get(model.Id).ConfigureAwait(true);
             Item item = mapper.Map<Item>(model);
+            item.Cost = oldItem.Cost;
+            item.Quantity = oldItem.Quantity;
             itemRepository.Edit(item);
             await unitOfWork.CompleteAsync().ConfigureAwait(true);
             return Ok(mapper.Map<ItemForGetDTO>(await itemRepository.Get(item.Id).ConfigureAwait(true)));
