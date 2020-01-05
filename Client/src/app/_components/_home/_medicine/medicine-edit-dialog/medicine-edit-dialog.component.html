@@ -14,8 +14,13 @@
 
     <div>
       <mat-form-field>
-        <input matInput type="text" placeholder="النوع" formControlName="type">
-        <mat-error *ngIf="errorHandling('type', 'required')">
+        <mat-label> النوع</mat-label>
+        <mat-select formControlName="medicineTypeId">
+          <mat-option *ngFor="let medicineType of data.medicineTypes" [value]="medicineType.id">
+            {{medicineType.name}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="errorHandling('medicineTypeId', 'required')">
           This field is required
         </mat-error>
       </mat-form-field>
@@ -23,18 +28,33 @@
 
     <div>
       <mat-form-field>
-        <input matInput type="text" placeholder="الجرعه" formControlName="drop">
-        <mat-error *ngIf="errorHandling('drop', 'required')">
+        <mat-label>الجرعه</mat-label>
+        <mat-select formControlName="frequencyId">
+          <mat-option *ngFor="let frequency of data.frequencys" [value]="frequency.id">
+            {{frequency.name}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="errorHandling('frequencyId', 'required')">
           This field is required
         </mat-error>
       </mat-form-field>
     </div>
 
 
+    <div>
+      <mat-form-field>
+        <input matInput type="number" placeholder="المده" formControlName="duration">
+        <mat-error *ngIf="errorHandling('duration', 'required')">
+          This field is required
+        </mat-error>
+      </mat-form-field>
+    </div>
+
     <div mat-dialog-actions>
       <button mat-raised-button color="primary" type="submit" (click)="update()"
-        [disabled]="!editForm.valid">Save</button>
-      <button mat-raised-button color="warn" (click)="cancel()" tabindex="-1">Cancel</button>
+        [disabled]="!editForm.valid">تعديل</button>
+      <button mat-raised-button color="warn" (click)="cancel()" tabindex="-1">إلغاء</button>
     </div>
+
   </form>
 </div>

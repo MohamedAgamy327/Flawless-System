@@ -22,8 +22,6 @@ export class ItemEditDialogComponent {
     this.editForm = this.formBuilder.group({
       id: [this.data.id],
       name: [this.data.name, Validators.required],
-      quantity: [this.data.quantity, Validators.required],
-      cost: [this.data.cost, Validators.required],
       price: [this.data.price, Validators.required]
     });
   }

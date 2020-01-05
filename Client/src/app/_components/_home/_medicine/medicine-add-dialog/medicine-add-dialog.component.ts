@@ -20,9 +20,10 @@ export class MedicineAddDialogComponent {
 
   createForm() {
     this.addForm = this.formBuilder.group({
-      name: ['', Validators.required],
-      type: ['', [Validators.required]],
-      drop: ['', [Validators.required]]
+      name: [''],
+      medicineTypeId: [],
+      duration: [],
+      frequencyId: []
     }
     );
   }

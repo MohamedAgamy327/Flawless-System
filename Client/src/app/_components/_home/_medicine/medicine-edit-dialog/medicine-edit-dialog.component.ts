@@ -14,16 +14,18 @@ export class MedicineEditDialogComponent {
   editForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder, private dialogRef: MatDialogRef<MedicineEditDialogComponent>,
-              @Inject(MAT_DIALOG_DATA) private data: any, private repository: RepositoryService, private snackBar: MatSnackBar) {
+              @Inject(MAT_DIALOG_DATA) public data: any, private repository: RepositoryService, private snackBar: MatSnackBar) {
     this.createForm();
   }
 
   createForm() {
     this.editForm = this.formBuilder.group({
-      id: [this.data.id],
-      name: [this.data.name, Validators.required],
-      type: [this.data.type, Validators.required],
-      drop: [this.data.drop, Validators.required]
+      id: [this.data.medicine.id],
+      name: [this.data.medicine.name, Validators.required],
+      medicineTypeId: [this.data.medicine.medicineTypeId],
+      duration: [this.data.medicine.duration],
+      frequencyId: [this.data.medicine.frequencyId]
+
     });
   }
 

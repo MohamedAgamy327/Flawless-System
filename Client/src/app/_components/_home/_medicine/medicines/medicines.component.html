@@ -17,16 +17,22 @@
 
     <ng-container matColumnDef="type">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> النوع </th>
-      <td mat-cell *matCellDef="let element"> {{element.type }} </td>
+      <td mat-cell *matCellDef="let element"> {{element.medicineType}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="drop">
+
+    <ng-container matColumnDef="frequency">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> الجرعه </th>
-      <td mat-cell *matCellDef="let element"> {{element.drop}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.frequency}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="duration">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> المدة </th>
+      <td mat-cell *matCellDef="let element"> {{element.duration}} </td>
     </ng-container>
 
     <ng-container matColumnDef="edit">
-      <th mat-header-cell *matHeaderCellDef> تعديل </th>
+      <th mat-header-cell *matHeaderCellDef>تعديل </th>
       <td mat-cell *matCellDef="let element">
         <button mat-icon-button color="accent" (click)="edit(element)">
           <mat-icon aria-label="Edit">edit</mat-icon>

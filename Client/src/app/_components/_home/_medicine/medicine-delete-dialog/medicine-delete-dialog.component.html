@@ -4,9 +4,11 @@
   <div mat-dialog-content>
     الاسم: {{data.name }}
     <p></p>
-    النوع: {{data.type}}
+    النوع: {{data.medicineType }}
     <p></p>
-    الجرعه: {{data.drop}}
+    الجرعه: {{data.frequency }}
+    <p></p>
+    المده: {{data.duration }}
     <p></p>
   </div>
 
@@ -14,4 +16,5 @@
     <button mat-raised-button color="primary" (click)="confirmDelete()">حذف</button>
     <button mat-raised-button color="warn" (click)="cancel()" tabindex="-1">إلغاء</button>
   </div>
+
 </div>

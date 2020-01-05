@@ -21,9 +21,7 @@ export class ItemAddDialogComponent {
   createForm() {
     this.addForm = this.formBuilder.group({
       name: ['', Validators.required],
-      quantity: ['', [Validators.required]],
-      cost: ['', [Validators.required]],
-      price: ['', [Validators.required]]
+      price: [, [Validators.required]]
     }
     );
   }

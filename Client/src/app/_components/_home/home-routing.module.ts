@@ -31,14 +31,15 @@ const routes: Routes = [
         path: 'medicinestypes', component: MedicineTypesComponent
       },
       {
-        path: 'spendings', component: SpendingsComponent
+        path: 'medicines', component: MedicinesComponent
+      },
+      {
+        path: 'spending', component: SpendingsComponent
       },
       {
         path: 'items', component: ItemsComponent
       },
-      {
-        path: 'medicines', component: MedicinesComponent
-      },
+
       {
         path: '', redirectTo: '', pathMatch: 'full'
       }

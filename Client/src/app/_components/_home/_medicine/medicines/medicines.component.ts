@@ -1,5 +1,5 @@
 import { RepositoryService } from 'src/app/_services';
-import { Medicine } from 'src/app/_models';
+import { Medicine, MedicineType, Frequency } from 'src/app/_models';
 import { MedicineEditDialogComponent } from './../medicine-edit-dialog/medicine-edit-dialog.component';
 import { MedicineAddDialogComponent } from '../medicine-add-dialog/medicine-add-dialog.component';
 import { MedicineDeleteDialogComponent } from '../medicine-delete-dialog/medicine-delete-dialog.component';
@@ -16,14 +16,18 @@ export class MedicinesComponent implements OnInit {
 
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
-  displayedColumns: string[] = ['name', 'type', 'drop', 'edit', 'delete'];
+  displayedColumns: string[] = ['name', 'type', 'frequency', 'duration', 'edit', 'delete'];
   medicines: Medicine[];
+  medicineTypes: MedicineType[];
+  frequencys: Frequency[];
   dataSource = new MatTableDataSource<Medicine>();
 
   constructor(private repository: RepositoryService, private snackBar: MatSnackBar, private dialog: MatDialog) { }
 
   ngOnInit() {
     this.getMedicines();
+    this.getFrequencys();
+    this.getMedicineTypes();
   }
 
   getMedicines() {
@@ -40,12 +44,39 @@ export class MedicinesComponent implements OnInit {
       });
   }
 
+  getFrequencys() {
+    this.repository.get('frequencys').subscribe(
+      (res: any) => {
+        this.frequencys = res;
+      },
+      (err: any) => {
+        this.snackBar.open(err.error, '', {
+          duration: 1000,
+          panelClass: ['red-snackbar']
+        });
+      });
+  }
+
+  getMedicineTypes() {
+    this.repository.get('medicineTypes').subscribe(
+      (res: any) => {
+        this.medicineTypes = res;
+      },
+      (err: any) => {
+        this.snackBar.open(err.error, '', {
+          duration: 1000,
+          panelClass: ['red-snackbar']
+        });
+      });
+  }
+
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
   add() {
     const dialogRef = this.dialog.open(MedicineAddDialogComponent, {
+      data: { frequencys: this.frequencys, medicineTypes: this.medicineTypes }
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -58,7 +89,7 @@ export class MedicinesComponent implements OnInit {
 
   edit(medicine) {
     const dialogRef = this.dialog.open(MedicineEditDialogComponent, {
-      data: medicine
+      data: { medicine, frequencys: this.frequencys, medicineTypes: this.medicineTypes }
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -83,6 +114,7 @@ export class MedicinesComponent implements OnInit {
       }
     });
   }
+
 
   refeshData() {
     this.dataSource = new MatTableDataSource(this.medicines);
