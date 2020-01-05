@@ -6,3 +6,4 @@ export * from './_spending/spending.model';
 export * from './_test/test.model';
 export * from './_diagnosis/diagnosis.model';
 export * from './_frequency/frequency.model';
+export * from './_medicine-type/medicine-type.model';

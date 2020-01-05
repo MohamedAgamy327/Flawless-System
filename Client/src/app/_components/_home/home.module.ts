@@ -17,7 +17,8 @@ import {
   SpendingAddDialogComponent, SpendingDeleteDialogComponent, SpendingEditDialogComponent, SpendingsComponent,
   TestsComponent, TestAddDialogComponent, TestEditDialogComponent, TestDeleteDialogComponent,
   DiagnosissComponent, DiagnosisAddDialogComponent, DiagnosisEditDialogComponent, DiagnosisDeleteDialogComponent,
-  FrequencysComponent, FrequencyAddDialogComponent, FrequencyEditDialogComponent, FrequencyDeleteDialogComponent
+  FrequencysComponent, FrequencyAddDialogComponent, FrequencyEditDialogComponent, FrequencyDeleteDialogComponent,
+  MedicineTypeAddDialogComponent, MedicineTypeDeleteDialogComponent, MedicineTypeEditDialogComponent, MedicineTypesComponent
 } from '.';
 
 
@@ -36,7 +37,8 @@ import {
     SpendingAddDialogComponent, SpendingDeleteDialogComponent, SpendingEditDialogComponent, SpendingsComponent,
     TestsComponent, TestAddDialogComponent, TestEditDialogComponent, TestDeleteDialogComponent,
     DiagnosissComponent, DiagnosisAddDialogComponent, DiagnosisEditDialogComponent, DiagnosisDeleteDialogComponent,
-    FrequencysComponent, FrequencyAddDialogComponent, FrequencyEditDialogComponent, FrequencyDeleteDialogComponent
+    FrequencysComponent, FrequencyAddDialogComponent, FrequencyEditDialogComponent, FrequencyDeleteDialogComponent,
+    MedicineTypeAddDialogComponent, MedicineTypeDeleteDialogComponent, MedicineTypeEditDialogComponent, MedicineTypesComponent
   ],
   entryComponents: [
     UserChangePasswordDialogComponent, UserDeleteDialogComponent,
@@ -47,7 +49,8 @@ import {
     SpendingAddDialogComponent, SpendingDeleteDialogComponent, SpendingEditDialogComponent,
     TestAddDialogComponent, TestEditDialogComponent, TestDeleteDialogComponent,
     DiagnosisAddDialogComponent, DiagnosisEditDialogComponent, DiagnosisDeleteDialogComponent
-    , FrequencyAddDialogComponent, FrequencyEditDialogComponent, FrequencyDeleteDialogComponent
+    , FrequencyAddDialogComponent, FrequencyEditDialogComponent, FrequencyDeleteDialogComponent,
+    MedicineTypeAddDialogComponent, MedicineTypeDeleteDialogComponent, MedicineTypeEditDialogComponent
   ],
   imports: [
     CommonModule,

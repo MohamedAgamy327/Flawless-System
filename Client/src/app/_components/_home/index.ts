@@ -33,3 +33,7 @@ export * from './_frequency/frequency-add-dialog/frequency-add-dialog.component'
 export * from './_frequency/frequency-delete-dialog/frequency-delete-dialog.component';
 export * from './_frequency/frequency-edit-dialog/frequency-edit-dialog.component';
 export * from './_frequency/frequencys/frequencys.component';
+export * from './_medicine-type/medicine-type-add-dialog/medicine-type-add-dialog.component';
+export * from './_medicine-type/medicine-type-delete-dialog/medicine-type-delete-dialog.component';
+export * from './_medicine-type/medicine-type-edit-dialog/medicine-type-edit-dialog.component';
+export * from './_medicine-type/medicine-types/medicine-types.component';
