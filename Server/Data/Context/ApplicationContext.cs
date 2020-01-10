@@ -33,13 +33,13 @@ namespace Data.Context
         public DbSet<Item> Items { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Test> Tests { get; set; }
-        public DbSet<Supply> Supplys { get; set; }
+        public DbSet<Supply> Supplies { get; set; }
         public DbSet<Patient> Patients { get; set; }
         public DbSet<Spending> Spendings { get; set; }
         public DbSet<Medicine> Medicines { get; set; }
         public DbSet<Frequency> Frequencys { get; set; }
         public DbSet<Diagnosis> Diagnosiss { get; set; }
-        public DbSet<SupplyItem> SupplysItems { get; set; }
+        public DbSet<SupplyItem> SuppliesItems { get; set; }
         public DbSet<MedicineType> MedicineTypes { get; set; }
 
     }

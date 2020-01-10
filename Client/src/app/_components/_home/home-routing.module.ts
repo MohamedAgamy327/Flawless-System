@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {
   HomeComponent, LandingComponent, UsersComponent, ItemsComponent,
   MedicinesComponent, PatientsComponent, SpendingsComponent, TestsComponent, DiagnosissComponent,
-  FrequencysComponent, MedicineTypesComponent
+  FrequencysComponent, MedicineTypesComponent, SuppliesComponent, SupplyAddComponent
 } from '.';
 
 const routes: Routes = [
@@ -39,7 +39,15 @@ const routes: Routes = [
       {
         path: 'items', component: ItemsComponent
       },
-
+      {
+        path: 'supplies', component: SuppliesComponent
+      },
+      {
+        path: 'supplyadd', component: SupplyAddComponent
+      },
+      // {
+      //   path: 'supply', component: ItemsComponent
+      // },
       {
         path: '', redirectTo: '', pathMatch: 'full'
       }

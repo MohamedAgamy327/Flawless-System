@@ -1,0 +1,124 @@
+<!-- <div class="example-container">
+  <form class="example-container" [formGroup]="addForm">
+
+    <mat-form-field>
+      <textarea matInput placeholder="Textarea"></textarea>
+    </mat-form-field>
+
+  </form>
+
+
+</div> -->
+
+<div fxLayout="row" fxLayoutAlign="center center" style="margin-top: 25px; margin-bottom: 25px;">
+
+  <mat-card fxFlex="90">
+
+    <form [formGroup]="supplyForm">
+      <div fxLayout="row" class="flex-container" fxLayout.xs="column">
+        <mat-form-field fxFlex="100">
+          <textarea matInput autocomplete="off" placeholder="الملاحظات" formControlName="notes"></textarea>
+        </mat-form-field>
+      </div>
+    </form>
+
+
+    <form [formGroup]="itemForm" autocomplete="off">
+      <div fxLayout="row" class="flex-container" fxLayout.xs="column">
+        <mat-form-field fxFlex="20">
+          <mat-label> الصنف</mat-label>
+          <mat-select formControlName="itemId">
+            <mat-option>اختار الصنف</mat-option>
+            <mat-option *ngFor="let item of items" [value]="item.id">
+              {{item.name}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="errorHandling('itemId', 'required')">
+            This field is required
+          </mat-error>
+        </mat-form-field>
+
+
+          <mat-form-field fxFlex="20" fxFlexOffset="5">
+            <input matInput type="number" placeholder="الكمية" formControlName="quantity">
+            <mat-error *ngIf="errorHandling('quantity', 'required')">
+              This field is required
+            </mat-error>
+          </mat-form-field>
+
+
+          <mat-form-field fxFlex="20" fxFlexOffset="5">
+            <input matInput type="number" placeholder="التكلفه" formControlName="cost">
+            <mat-error *ngIf="errorHandling('cost', 'required')">
+              This field is required
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field fxFlex="20" fxFlexOffset="5" >
+            <input matInput type="number" placeholder="السعر" formControlName="price">
+            <mat-error *ngIf="errorHandling('price', 'required')">
+              This field is required
+            </mat-error>
+          </mat-form-field>
+
+      </div>
+    </form>
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <button mat-raised-button color="primary" (click)="addSupplyItem()">اضافه الصنف</button>
+    </div>
+
+
+  </mat-card>
+
+</div>
+
+
+<div class="table-container">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> الصنف </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="quantity">
+      <th mat-header-cell *matHeaderCellDef> الكمية </th>
+      <td mat-cell *matCellDef="let element"> {{element.quantity}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="cost">
+      <th mat-header-cell *matHeaderCellDef> التكلفه </th>
+      <td mat-cell *matCellDef="let element"> {{element.cost}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef> السعر </th>
+      <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="edit">
+      <th mat-header-cell *matHeaderCellDef> تعديل </th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button color="accent" (click)="editItem(element)">
+          <mat-icon aria-label="Edit">edit</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef> حذف </th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button color="warn" (click)="deleteItem(element.itemId)">
+          <mat-icon aria-label="Delete">delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+
+<div fxLayout="row" fxLayoutAlign="center center">
+  <button mat-raised-button color="primary" (click)="save()">حفظ التوريد</button>
+</div>

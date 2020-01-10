@@ -37,3 +37,6 @@ export * from './_medicine-type/medicine-type-add-dialog/medicine-type-add-dialo
 export * from './_medicine-type/medicine-type-delete-dialog/medicine-type-delete-dialog.component';
 export * from './_medicine-type/medicine-type-edit-dialog/medicine-type-edit-dialog.component';
 export * from './_medicine-type/medicine-types/medicine-types.component';
+export * from './_supply/supplies/supplies.component';
+export * from './_supply/supply-add/supply-add.component';
+export * from './_supply/supply-items/supply-items.component';

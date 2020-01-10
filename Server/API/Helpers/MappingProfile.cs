@@ -50,6 +50,10 @@ namespace API.Helpers
             CreateMap<SupplyForAddDTO, Supply>()
                      .ForMember(x => x.SupplyItems, opt => opt.Ignore());
 
+            CreateMap<SupplyItemForEditDTO, SupplyItem>();
+            CreateMap<SupplyForEditDTO, Supply>()
+                     .ForMember(x => x.SupplyItems, opt => opt.Ignore());
+
             // Entity to DTO
 
             CreateMap<Test, TestForGetDTO>();

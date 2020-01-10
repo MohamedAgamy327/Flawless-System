@@ -16,7 +16,7 @@ namespace Repository.Repository
         }
         public async Task<Supply> Add(Supply supply)
         {
-            await context.Supplys.AddAsync(supply);
+            await context.Supplies.AddAsync(supply);
             return supply;
         }
         public Supply Edit(Supply supply)
@@ -26,11 +26,11 @@ namespace Repository.Repository
         }
         public async Task<Supply> Get(int id)
         {
-            return await context.Supplys.AsNoTracking().SingleOrDefaultAsync(s => s.Id == id);
+            return await context.Supplies.Include(d => d.SupplyItems).AsNoTracking().SingleOrDefaultAsync(s => s.Id == id);
         }
         public async Task<IEnumerable<Supply>> Get()
         {
-            return await context.Supplys.ToListAsync();
+            return await context.Supplies.ToListAsync();
         }
         public void Remove(Supply supply)
         {

@@ -15,34 +15,9 @@
         <span class="title" mat-line> الرئيسية</span>
       </a>
 
-      <a mat-list-item class="sidenav-link" [routerLink]="['/home/users']" [routerLinkActiveOptions]="{exact:true}"
-        routerLinkActive="active-list-item" (click)="sidenav.toggle()">
-        <span class="title" mat-line>المستخدمين</span>
-      </a>
-
       <a mat-list-item class="sidenav-link" [routerLink]="['/home/patients']" [routerLinkActiveOptions]="{exact:true}"
         routerLinkActive="active-list-item" (click)="sidenav.toggle()">
-        <span class="title" mat-line >المرضى</span>
-      </a>
-
-      <a mat-list-item class="sidenav-link" [routerLink]="['/home/tests']" [routerLinkActiveOptions]="{exact:true}"
-        routerLinkActive="active-list-item" (click)="sidenav.toggle()">
-        <span class="title" mat-line>التحاليل</span>
-      </a>
-
-      <a mat-list-item class="sidenav-link" [routerLink]="['/home/diagnosis']" [routerLinkActiveOptions]="{exact:true}"
-        routerLinkActive="active-list-item" (click)="sidenav.toggle()">
-        <span class="title" mat-line>التشخيصات</span>
-      </a>
-
-      <a mat-list-item class="sidenav-link" [routerLink]="['/home/frequency']" [routerLinkActiveOptions]="{exact:true}"
-        routerLinkActive="active-list-item" (click)="sidenav.toggle()">
-        <span class="title" mat-line>الجرعات</span>
-      </a>
-
-      <a mat-list-item class="sidenav-link" [routerLink]="['/home/medicinestypes']" [routerLinkActiveOptions]="{exact:true}"
-        routerLinkActive="active-list-item" (click)="sidenav.toggle()">
-        <span class="title" mat-line>انواع الأدويه</span>
+        <span class="title" mat-line>المرضى</span>
       </a>
 
       <a mat-list-item class="sidenav-link" [routerLink]="['/home/medicines']" [routerLinkActiveOptions]="{exact:true}"
@@ -55,15 +30,72 @@
         <span class="title" mat-line>المصروفات</span>
       </a>
 
-      <a mat-list-item class="sidenav-link" [routerLink]="['/home/items']" [routerLinkActiveOptions]="{exact:true}"
-        routerLinkActive="active-list-item" (click)="sidenav.toggle()">
-        <span class="title" mat-line>الاصناف</span>
-      </a>
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              التوريدات
+            </mat-panel-title>
+          </mat-expansion-panel-header>
 
-      <a mat-list-item class="sidenav-link" [routerLink]="['/home/supplies']" [routerLinkActiveOptions]="{exact:true}"
-        routerLinkActive="active-list-item" (click)="sidenav.toggle()">
-        <span class="title" mat-line>التوريدات</span>
-      </a>
+          <a mat-list-item class="sidenav-link" [routerLink]="['/home/items']" [routerLinkActiveOptions]="{exact:true}"
+            routerLinkActive="active-list-item" (click)="sidenav.toggle()">
+            <span class="title" mat-line>الاصناف</span>
+          </a>
+
+          <a mat-list-item class="sidenav-link" [routerLink]="['/home/supplies']"
+            [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active-list-item" (click)="sidenav.toggle()">
+            <span class="title" mat-line> عرض التوريدات</span>
+          </a>
+
+          <a mat-list-item class="sidenav-link" [routerLink]="['/home/supplyadd']"
+          [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active-list-item" (click)="sidenav.toggle()">
+          <span class="title" mat-line> إضافة توريد</span>
+        </a>
+
+        </mat-expansion-panel>
+
+      </mat-accordion>
+
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              الاعدادات
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <a mat-list-item class="sidenav-link" [routerLink]="['/home/users']" [routerLinkActiveOptions]="{exact:true}"
+            routerLinkActive="active-list-item" (click)="sidenav.toggle()">
+            <span class="title" mat-line>المستخدمين</span>
+          </a>
+
+          <a mat-list-item class="sidenav-link" [routerLink]="['/home/tests']" [routerLinkActiveOptions]="{exact:true}"
+            routerLinkActive="active-list-item" (click)="sidenav.toggle()">
+            <span class="title" mat-line>التحاليل</span>
+          </a>
+
+          <a mat-list-item class="sidenav-link" [routerLink]="['/home/diagnosis']"
+            [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active-list-item" (click)="sidenav.toggle()">
+            <span class="title" mat-line>التشخيصات</span>
+          </a>
+
+          <a mat-list-item class="sidenav-link" [routerLink]="['/home/frequency']"
+            [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active-list-item" (click)="sidenav.toggle()">
+            <span class="title" mat-line>الجرعات</span>
+          </a>
+
+          <a mat-list-item class="sidenav-link" [routerLink]="['/home/medicinestypes']"
+            [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active-list-item" (click)="sidenav.toggle()">
+            <span class="title" mat-line>انواع الأدويه</span>
+          </a>
+
+
+        </mat-expansion-panel>
+
+      </mat-accordion>
+
+
 
     </mat-nav-list>
   </mat-sidenav>

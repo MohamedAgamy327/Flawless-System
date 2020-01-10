@@ -3,6 +3,7 @@ using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Repository.IRepository;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Repository.Repository
@@ -21,6 +22,11 @@ namespace Repository.Repository
         }
         public Item Edit(Item item)
         {
+            var local = context.Set<Item>().Local.FirstOrDefault(entry => entry.Id.Equals(item.Id));
+            if (local != null)
+            {
+                context.Entry(local).State = EntityState.Detached;
+            }
             context.Entry(item).State = EntityState.Modified;
             return item;
         }

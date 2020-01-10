@@ -16,10 +16,17 @@ namespace Repository.Repository
             this.context = context;
         }
 
+        public async Task Add(ICollection<SupplyItem> supplyItems)
+        {
+            await context.SuppliesItems.AddRangeAsync(supplyItems);
+        }
         public async Task<IEnumerable<SupplyItem>> Get(int supplyId)
         {
-            return await context.SupplysItems.Include(w => w.Item).Where(w => w.SupplyId == supplyId).ToListAsync();
+            return await context.SuppliesItems.Include(w => w.Item).AsNoTracking().Where(w => w.SupplyId == supplyId).ToListAsync();
         }
-
+        public void Remove(int supplyId)
+        {
+            context.RemoveRange(context.SuppliesItems.Where(r => r.SupplyId == supplyId));
+        }
     }
 }
