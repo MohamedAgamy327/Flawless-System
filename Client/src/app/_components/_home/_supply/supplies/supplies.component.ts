@@ -13,7 +13,7 @@ export class SuppliesComponent implements OnInit {
 
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
-  displayedColumns: string[] = ['notes', 'date', 'edit', 'delete'];
+  displayedColumns: string[] = ['notes', 'date', 'show', 'edit', 'delete'];
   supplies: Supply[];
   dataSource = new MatTableDataSource<Supply>();
 

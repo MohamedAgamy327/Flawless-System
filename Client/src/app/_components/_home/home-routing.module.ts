@@ -3,7 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import {
   HomeComponent, LandingComponent, UsersComponent, ItemsComponent,
   MedicinesComponent, PatientsComponent, SpendingsComponent, TestsComponent, DiagnosissComponent,
-  FrequencysComponent, MedicineTypesComponent, SuppliesComponent, SupplyAddComponent
+  FrequencysComponent, MedicineTypesComponent, SuppliesComponent, SupplyAddComponent,
+  SupplyShowComponent, SupplyDeleteComponent, SupplyEditComponent
 } from '.';
 
 const routes: Routes = [
@@ -45,9 +46,15 @@ const routes: Routes = [
       {
         path: 'supplyadd', component: SupplyAddComponent
       },
-      // {
-      //   path: 'supply', component: ItemsComponent
-      // },
+      {
+        path: 'supplies/:id', component: SupplyShowComponent
+      },
+      {
+        path: 'supplies/delete/:id', component: SupplyDeleteComponent
+      },
+      {
+        path: 'supplies/edit/:id', component: SupplyEditComponent
+      },
       {
         path: '', redirectTo: '', pathMatch: 'full'
       }

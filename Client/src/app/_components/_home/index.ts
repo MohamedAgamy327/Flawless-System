@@ -39,4 +39,6 @@ export * from './_medicine-type/medicine-type-edit-dialog/medicine-type-edit-dia
 export * from './_medicine-type/medicine-types/medicine-types.component';
 export * from './_supply/supplies/supplies.component';
 export * from './_supply/supply-add/supply-add.component';
-export * from './_supply/supply-items/supply-items.component';
+export * from './_supply/supply-show/supply-show.component';
+export * from './_supply/supply-delete/supply-delete.component';
+export * from './_supply/supply-edit/supply-edit.component';

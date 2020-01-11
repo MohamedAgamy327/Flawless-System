@@ -59,8 +59,10 @@ namespace API.Controllers
             }
 
             supplyItemRepository.Remove(model.Id);
+            await unitOfWork.CompleteAsync().ConfigureAwait(true);
 
             Supply supply = mapper.Map<Supply>(model);
+            supply.Date = oldSupply.Date;
             supply.SupplyItems = mapper.Map<List<SupplyItem>>(model.SupplyItems);
 
             foreach (var item in model.SupplyItems)
@@ -101,11 +103,18 @@ namespace API.Controllers
             return Ok(mapper.Map<List<SupplyForGetDTO>>(await supplyRepository.Get().ConfigureAwait(true)));
         }
 
-        [Route("{supplyId:int}/items")]
+        [Route("{id:int}")]
         [HttpGet]
-        public async Task<IActionResult> GetItems(int supplyId)
+        public async Task<IActionResult> Get(int id)
         {
-            return Ok(mapper.Map<List<SupplyItemForGetDTO>>(await supplyItemRepository.Get(supplyId).ConfigureAwait(true)));
+            return Ok(mapper.Map<SupplyForGetDTO>(await supplyRepository.Get(id).ConfigureAwait(true)));
+        }
+
+        [Route("{id:int}/items")]
+        [HttpGet]
+        public async Task<IActionResult> GetItems(int id)
+        {
+            return Ok(mapper.Map<List<SupplyItemForGetDTO>>(await supplyItemRepository.Get(id).ConfigureAwait(true)));
         }
     }
 }

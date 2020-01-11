@@ -65,7 +65,7 @@ namespace API.Helpers
             CreateMap<Frequency, FrequencyForGetDTO>();
             CreateMap<MedicineType, MedicineTypeForGetDTO>();
             CreateMap<SupplyItem, SupplyItemForGetDTO>()
-                  .ForMember(dest => dest.Item, opt => opt.MapFrom(src => src.Item.Name));       
+                  .ForMember(dest => dest.ItemName, opt => opt.MapFrom(src => src.Item.Name));       
             CreateMap<Spending, SpendingForGetDTO>()
                   .ForMember(dest => dest.User, opt => opt.MapFrom(src => src.User.Name));
             CreateMap<Medicine, MedicineForGetDTO>()

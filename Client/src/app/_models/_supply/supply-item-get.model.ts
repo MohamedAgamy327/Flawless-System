@@ -1,6 +1,7 @@
-export interface SupplyItem {
+export interface SupplyItemGet {
+  supplyId: number;
   itemId: number;
-  name: string;
+  itemName: string;
   quantity: number;
   cost: number;
   price: number;

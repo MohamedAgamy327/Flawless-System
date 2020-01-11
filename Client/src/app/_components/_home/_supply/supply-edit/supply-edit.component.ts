@@ -2,19 +2,21 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar, MatTableDataSource } from '@angular/material';
 import { RepositoryService } from 'src/app/_services';
 import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
-import { SupplyItemAdd, Item } from 'src/app/_models';
+import { SupplyItemGet, Item, Supply } from 'src/app/_models';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-supply-add',
-  templateUrl: './supply-add.component.html',
-  styleUrls: ['./supply-add.component.css']
+  selector: 'app-supply-edit',
+  templateUrl: './supply-edit.component.html',
+  styleUrls: ['./supply-edit.component.css']
 })
 
-export class SupplyAddComponent implements OnInit {
+export class SupplyEditComponent implements OnInit {
 
+  supply: Supply;
   // Table
-  supplyItems: SupplyItemAdd[] = [];
-  dataSource = new MatTableDataSource<SupplyItemAdd>();
+  supplyItems: SupplyItemGet[] = [];
+  dataSource = new MatTableDataSource<SupplyItemGet>();
   displayedColumns: string[] = ['name', 'quantity', 'cost', 'price', 'edit', 'delete'];
 
   // Drop Down List
@@ -24,19 +26,22 @@ export class SupplyAddComponent implements OnInit {
   supplyForm: FormGroup;
   itemForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private repository: RepositoryService, private snackBar: MatSnackBar) {
+  constructor(private router: Router, private route: ActivatedRoute,
+              private formBuilder: FormBuilder, private repository: RepositoryService, private snackBar: MatSnackBar) {
     this.createSupplyForm();
     this.createItemForm();
     this.onItemChange();
-    this.refeshData();
   }
 
   ngOnInit() {
     this.getItems();
+    this.getSupply(this.route.snapshot.params.id);
+    this.getSupplyItems(this.route.snapshot.params.id);
   }
 
   createSupplyForm() {
     this.supplyForm = this.formBuilder.group({
+      id: [],
       notes: [''],
       supplyItems: this.formBuilder.array([])
     }
@@ -45,6 +50,7 @@ export class SupplyAddComponent implements OnInit {
 
   createItemForm() {
     this.itemForm = this.formBuilder.group({
+      supplyId: [, Validators.required],
       itemId: [, Validators.required],
       itemName: ['', Validators.required],
       quantity: [, [Validators.required]],
@@ -56,6 +62,51 @@ export class SupplyAddComponent implements OnInit {
 
   public errorHandling = (control: string, error: string) => {
     return this.itemForm.controls[control].hasError(error);
+  }
+
+  getSupply(id) {
+    this.repository.get(`supplies/${id}`).subscribe(
+      (res: any) => {
+        this.supply = res;
+        this.fillSupplyForm();
+      },
+      (err: any) => {
+        this.snackBar.open(err.error, '', {
+          duration: 1000,
+          panelClass: ['red-snackbar']
+        });
+      });
+  }
+
+  fillSupplyForm() {
+    this.supplyForm.patchValue({
+      id: this.supply.id,
+      notes: this.supply.notes
+    });
+  }
+
+  getSupplyItems(id) {
+    this.repository.get(`supplies/${id}/items`).subscribe(
+      (res: any) => {
+        this.supplyItems = res;
+        this.fillSuppyItemsForm();
+        this.refeshData();
+        console.log(this.supplyForm.value);
+
+      },
+      (err: any) => {
+        this.snackBar.open(err.error, '', {
+          duration: 1000,
+          panelClass: ['red-snackbar']
+        });
+      });
+  }
+
+  fillSuppyItemsForm() {
+    const supplyItemControl = (this.supplyForm.get('supplyItems') as FormArray);
+    this.supplyItems.forEach(element => {
+      supplyItemControl.push(this.formBuilder.group(element));
+    });
   }
 
   getItems() {
@@ -90,15 +141,8 @@ export class SupplyAddComponent implements OnInit {
     this.dataSource = new MatTableDataSource(this.supplyItems);
   }
 
-  resetSupplyForm() {
-    (this.supplyForm.get('supplyItems') as FormArray).clear();
-    this.supplyForm.patchValue({ notes: ''});
-    this.supplyForm.markAsPristine();
-    this.supplyForm.markAsUntouched();
-  }
-
   resetItemForm() {
-    this.itemForm.setValue({ itemId: null, itemName: '', quantity: null, cost: null, price: null });
+    this.itemForm.setValue({ supplyId: null, itemId: null, itemName: '', quantity: null, cost: null, price: null });
     this.itemForm.markAsPristine();
     this.itemForm.markAsUntouched();
   }
@@ -112,6 +156,7 @@ export class SupplyAddComponent implements OnInit {
     const control = this.supplyForm.controls.supplyItems as FormArray;
     control.push(
       this.formBuilder.group({
+        supplyId: this.supply.id,
         itemId: this.itemForm.value.itemId,
         quantity: this.itemForm.value.quantity,
         cost: this.itemForm.value.cost,
@@ -137,17 +182,10 @@ export class SupplyAddComponent implements OnInit {
     this.refeshData();
   }
 
-  save() {
-    this.repository.post('supplies', this.supplyForm.value).subscribe(
+  update() {
+    this.repository.put('supplies', this.supplyForm.value).subscribe(
       (res: any) => {
-        this.resetItemForm();
-        this.resetSupplyForm();
-        this.supplyItems = [];
-        this.refeshData();
-        this.snackBar.open('Added Successfully', '', {
-          duration: 1000,
-          panelClass: ['green-snackbar']
-        });
+        this.router.navigate(['/home/supplies']);
       },
       (err: any) => {
         this.snackBar.open(err.error, '', {
