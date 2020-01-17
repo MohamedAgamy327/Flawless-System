@@ -20,10 +20,16 @@
         <span class="title" mat-line>المرضى</span>
       </a>
 
+      <a mat-list-item class="sidenav-link" [routerLink]="['/home/waiting']" [routerLinkActiveOptions]="{exact:true}"
+      routerLinkActive="active-list-item" (click)="sidenav.toggle()">
+      <span class="title" mat-line>الحجز</span>
+    </a>
+
       <a mat-list-item class="sidenav-link" [routerLink]="['/home/medicines']" [routerLinkActiveOptions]="{exact:true}"
         routerLinkActive="active-list-item" (click)="sidenav.toggle()">
         <span class="title" mat-line>الأدوية</span>
       </a>
+
 
       <a mat-list-item class="sidenav-link" [routerLink]="['/home/spending']" [routerLinkActiveOptions]="{exact:true}"
         routerLinkActive="active-list-item" (click)="sidenav.toggle()">
