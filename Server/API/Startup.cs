@@ -21,6 +21,7 @@ using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using Repository.IRepository;
 using Repository.Repository;
+using System.IO;
 
 namespace API
 {
@@ -122,8 +123,21 @@ namespace API
             }
 
             app.UseStaticFiles();
+            app.UseDefaultFiles();
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
+
+            app.Use(async (context, next) =>
+            {
+                await next().ConfigureAwait(true);
+
+                if (context.Response.StatusCode == 404 && !Path.HasExtension(context.Request.Path.Value))
+                {
+                    context.Request.Path = "/index.html";
+                    await next().ConfigureAwait(true);
+                }
+
+            });
 
             app.UseRouting();
 
