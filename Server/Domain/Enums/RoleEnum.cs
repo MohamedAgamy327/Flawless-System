@@ -2,6 +2,6 @@
 {
     public enum RoleEnum
     {
-       doctor,nurse
+       Doctor,Nurse
     }
 }

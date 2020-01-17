@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using API.DTO.User;
+using API.IHelpers;
 using AutoMapper;
 using Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
@@ -15,12 +16,14 @@ namespace API.Controllers
     public class UsersController : ControllerBase
     {
         private readonly IMapper mapper;
+        private readonly IJWTManager jwtManager;
         private readonly IUnitOfWork unitOfWork;
         private readonly IUserRepository userRepository;
 
-        public UsersController(IMapper mapper, IUnitOfWork unitOfWork, IUserRepository userRepository)
+        public UsersController(IJWTManager jwtManager, IMapper mapper, IUnitOfWork unitOfWork, IUserRepository userRepository)
         {
             this.mapper = mapper;
+            this.jwtManager = jwtManager;
             this.unitOfWork = unitOfWork;
             this.userRepository = userRepository;
         }
@@ -77,5 +80,17 @@ namespace API.Controllers
         {
             return Ok(mapper.Map<List<UserForGetDTO>>(await userRepository.Get().ConfigureAwait(true)));
         }
+
+        [Route("Login")]
+        [HttpPost]
+        public async Task<IActionResult> Login(UserForLoginDTO model)
+        {
+            User user = await userRepository.Login(model.Name, model.Password).ConfigureAwait(true);
+            if (user == null)
+                return NotFound();
+
+            return Ok(new { Token = jwtManager.GenerateToken(user.Id, user.Name,  user.Role.ToString()) });
+        }
+
     }
 }

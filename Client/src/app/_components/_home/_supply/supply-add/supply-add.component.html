@@ -14,6 +14,7 @@
     <form [formGroup]="itemForm" autocomplete="off">
       <div fxLayout="row" class="flex-container" fxLayout.xs="column">
         <mat-form-field fxFlex="20">
+
           <mat-label> الصنف</mat-label>
           <mat-select formControlName="itemId">
             <mat-option>اختار الصنف</mat-option>
@@ -25,8 +26,6 @@
             This field is required
           </mat-error>
         </mat-form-field>
-
-
           <mat-form-field fxFlex="20" fxFlexOffset="5">
             <input matInput type="number" placeholder="الكمية" formControlName="quantity">
             <mat-error *ngIf="errorHandling('quantity', 'required')">

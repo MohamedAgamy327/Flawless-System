@@ -17,13 +17,12 @@ namespace API.Helpers
         {
             this.config = config;
         }
-        public string GenerateToken(int id, string name, string email, string role)
+        public string GenerateToken(int id, string name,  string role)
         {
             var claims = new List<Claim>
             {
                 new Claim("id", id.ToString()),
                 new Claim("name", name),
-                new Claim("email", email),
                 new Claim(ClaimTypes.Role, role)
             };
 

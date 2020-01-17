@@ -38,15 +38,15 @@ namespace Repository.Repository
 
         public async Task<User> Login(string name, string password)
         {
-            var optionUser = await context.Users.FirstOrDefaultAsync(x => x.Name == name);
+            var user = await context.Users.FirstOrDefaultAsync(x => x.Name == name);
 
-            if (optionUser == null)
+            if (user == null)
                 return null;
 
-            if (!SecurePassword.VerifyPasswordHash(password, optionUser.PasswordHash, optionUser.PasswordSalt))
+            if (!SecurePassword.VerifyPasswordHash(password, user.PasswordHash, user.PasswordSalt))
                 return null;
 
-            return optionUser;
+            return user;
         }
 
         public void Remove(User user)
