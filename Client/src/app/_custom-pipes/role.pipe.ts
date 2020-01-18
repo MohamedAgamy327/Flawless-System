@@ -7,9 +7,9 @@ import { RoleEnum } from '../_enums/role.enum';
 export class RolePipe implements PipeTransform {
 
   transform(val: string): string {
-    if (val === RoleEnum[RoleEnum.doctor]) {
+    if (val === RoleEnum[RoleEnum.Doctor]) {
       return 'دكتور';
-    } else if (val === RoleEnum[RoleEnum.nurse]) {
+    } else if (val === RoleEnum[RoleEnum.Nurse]) {
       return 'ممرضه';
     }
     return '';

@@ -4,9 +4,11 @@ namespace Domain.Entities
 {
     public class Waiting
     {
-        public DateTime Date { get; set; }
-        public DateTime? CancelDate { get; set; }
-        public DateTime? EnterDate { get; set; }
+        public int Id { get; set; }
+        public DateTime ArrivalDate { get; set; }
+        public DateTime? CanceledDate { get; set; }
+        public DateTime? EnteredDate { get; set; }
+        public DateTime? FinishedDate { get; set; }
         public int Order { get; set; }
         public int PatientId { get; set; }
         public Patient Patient { get; set; }

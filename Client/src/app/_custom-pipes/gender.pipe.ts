@@ -7,9 +7,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class GenderPipe implements PipeTransform {
 
   transform(val: string): string {
-    if (val === GenderEnum[GenderEnum.female]) {
+    if (val === GenderEnum[GenderEnum.Female]) {
       return 'انثى';
-    } else if (val === GenderEnum[GenderEnum.male]) {
+    } else if (val === GenderEnum[GenderEnum.Male]) {
       return 'ذكر';
     }
     return '';

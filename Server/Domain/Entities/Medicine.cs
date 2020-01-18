@@ -1,4 +1,6 @@
-﻿namespace Domain.Entities
+﻿using System.Collections.Generic;
+
+namespace Domain.Entities
 {
     public class Medicine
     {
@@ -9,6 +11,6 @@
         public int FrequencyId { get; set; }
         public Frequency Frequency { get; set; }
         public int Duration { get; set; }
-
+        public ICollection<CheckingMedicine> CheckingMedicines { get; set; }
     }
 }

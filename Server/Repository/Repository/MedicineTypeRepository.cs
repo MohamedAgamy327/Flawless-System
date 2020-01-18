@@ -32,7 +32,6 @@ namespace Repository.Repository
         {
             return await context.MedicineTypes.ToListAsync();
         }
-
         public void Remove(MedicineType medicineType)
         {
             context.Remove(medicineType);

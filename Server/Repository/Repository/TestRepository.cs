@@ -32,7 +32,6 @@ namespace Repository.Repository
         {
             return await context.Tests.ToListAsync();
         }
-
         public void Remove(Test test)
         {
             context.Remove(test);

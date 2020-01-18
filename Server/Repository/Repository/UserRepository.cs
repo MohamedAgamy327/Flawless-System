@@ -35,7 +35,6 @@ namespace Repository.Repository
         {
             return await context.Users.ToListAsync();
         }
-
         public async Task<User> Login(string name, string password)
         {
             var user = await context.Users.FirstOrDefaultAsync(x => x.Name == name);
@@ -48,7 +47,6 @@ namespace Repository.Repository
 
             return user;
         }
-
         public void Remove(User user)
         {
             context.Remove(user);

@@ -26,11 +26,11 @@ namespace Repository.Repository
         }
         public async Task<Spending> Get(int id)
         {
-            return await context.Spendings.Include(i=>i.User).AsNoTracking().SingleOrDefaultAsync(s => s.Id == id);
+            return await context.Spendings/*.Include(i=>i.User)*/.AsNoTracking().SingleOrDefaultAsync(s => s.Id == id);
         }
         public async Task<IEnumerable<Spending>> Get()
         {
-            return await context.Spendings.Include(i => i.User).ToListAsync();
+            return await context.Spendings/*.Include(i => i.User)*/.ToListAsync();
         }
         public void Remove(Spending spending)
         {

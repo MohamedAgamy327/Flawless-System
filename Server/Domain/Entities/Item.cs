@@ -10,5 +10,6 @@ namespace Domain.Entities
         public decimal Cost { get; set; }
         public decimal Price { get; set; }
         public ICollection<SupplyItem> SupplyItems { get; set; }
+        public ICollection<CheckingItem> CheckingItems { get; set; }
     }
 }

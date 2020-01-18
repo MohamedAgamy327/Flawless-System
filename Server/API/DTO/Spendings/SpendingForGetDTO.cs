@@ -8,7 +8,7 @@ namespace API.DTO.Spendings
         public DateTime Date { get; set; }
         public string Statement { get; set; }
         public decimal Amount { get; set; }
-        public int UserId { get; set; }
-        public string User { get; set; }
+        //public int UserId { get; set; }
+        //public string User { get; set; }
     }
 }

@@ -32,7 +32,6 @@ namespace Repository.Repository
         {
             return await context.Diagnosiss.ToListAsync();
         }
-
         public void Remove(Diagnosis diagnosis)
         {
             context.Remove(diagnosis);

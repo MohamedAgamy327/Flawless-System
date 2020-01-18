@@ -43,13 +43,18 @@ namespace API
             services.AddScoped<ITestRepository, TestRepository>();
             services.AddScoped<ISupplyRepository, SupplyRepository>();
             services.AddScoped<IPatientRepository, PatientRepository>();
+            services.AddScoped<IWaitingRepository, WaitingRepository>();
             services.AddScoped<ISpendingRepository, SpendingRepository>();
             services.AddScoped<IMedicineRepository, MedicineRepository>();
             services.AddScoped<ISpendingRepository, SpendingRepository>();
+            services.AddScoped<ICheckingRepository, CheckingRepository>();
             services.AddScoped<IFrequencyRepository, FrequencyRepository>();
             services.AddScoped<IDiagnosisRepository, DiagnosisRepository>();
             services.AddScoped<ISupplyItemRepository, SupplyItemRepository>();
             services.AddScoped<IMedicineTypeRepository, MedicineTypeRepository>();
+            services.AddScoped<ICheckingItemRepository, CheckingItemRepository>();
+            services.AddScoped<ICheckingTestRepository, CheckingTestRepository>();
+            services.AddScoped<ICheckingMedicineRepository, CheckingMedicineRepository>();
 
             services.AddAutoMapper(typeof(Startup));
             services.AddControllers();

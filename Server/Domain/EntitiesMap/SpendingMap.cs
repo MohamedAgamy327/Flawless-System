@@ -12,7 +12,7 @@ namespace Domain.EntitiesMap
             entityBuilder.Property(t => t.Statement).IsRequired();
             entityBuilder.Property(t => t.Amount).IsRequired();
             entityBuilder.Property(t => t.Date).HasDefaultValueSql("getdate()");
-            entityBuilder.HasOne(h => h.User).WithMany(w => w.Spendings).HasForeignKey(h => h.UserId);
+      //      entityBuilder.HasOne(h => h.User).WithMany(w => w.Spendings).HasForeignKey(h => h.UserId);
         }
     }
 }

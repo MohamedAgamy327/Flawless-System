@@ -32,7 +32,6 @@ namespace Repository.Repository
         {
             return await context.Frequencys.ToListAsync();
         }
-
         public void Remove(Frequency frequency)
         {
             context.Remove(frequency);

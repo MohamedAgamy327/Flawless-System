@@ -2,8 +2,8 @@ export interface Medicine {
   id: string;
   name: string;
   medicineTypeId: number;
-  medicineType: string;
+  medicineTypeName: string;
   frequencyId: number;
-  frequency: string;
+  frequencyName: string;
   duration: number;
 }

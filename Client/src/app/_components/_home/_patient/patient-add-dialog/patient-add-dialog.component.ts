@@ -24,7 +24,7 @@ export class PatientAddDialogComponent {
       telephone: [''],
       address: [''],
       birthday: [],
-      gender: ['male', [Validators.required]]
+      gender: ['Male', [Validators.required]]
     }
     );
   }
