@@ -1,4 +1,5 @@
 export * from './_user/user.model';
+export * from './_waiting/waiting.model';
 export * from './_item/item.model';
 export * from './_test/test.model';
 export * from './_supply/supply.model';

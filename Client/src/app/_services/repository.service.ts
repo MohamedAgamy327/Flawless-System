@@ -44,6 +44,14 @@ export class RepositoryService {
     return this.http.put(requestUrl, entity);
   }
 
+  patch(url: string, entity?: any, params?: any) {
+    const requestUrl = this.generateUrl(
+      `${environment.serverUrl + url}`,
+      params
+    );
+    return this.http.patch(requestUrl, entity);
+  }
+
   private generateUrl(url: string, params: any) {
     let requestUrl: string;
     requestUrl = `${url}?`;

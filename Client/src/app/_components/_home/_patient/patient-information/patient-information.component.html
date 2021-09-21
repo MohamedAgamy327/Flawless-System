@@ -1,0 +1,21 @@
+<mat-card class="example-card">
+    <mat-card-header>
+        <mat-card-title>بيانات المريض</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+
+        الاسم: {{patient?.name }}
+        <p></p>
+        النوع: {{patient?.gender | gender}}
+        <p></p>
+        التليفون: {{patient?.telephone }}
+        <p></p>
+        العنون: {{patient?.address }}
+        <p></p>
+        الكود: {{patient.code}}
+        <p></p>
+        السن: {{patient.age}}
+        <p></p>
+
+    </mat-card-content>
+</mat-card>

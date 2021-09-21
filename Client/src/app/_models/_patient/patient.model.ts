@@ -5,4 +5,6 @@ export interface Patient {
   birthday: Date;
   gender: string;
   address: string;
+  code: string;
+  age: string;
 }

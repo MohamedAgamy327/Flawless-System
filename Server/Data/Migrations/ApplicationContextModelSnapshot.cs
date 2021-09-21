@@ -226,8 +226,14 @@ namespace Data.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Age")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime?>("Birthday")
                         .HasColumnType("date");
+
+                    b.Property<string>("Code")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Gender")
                         .HasColumnType("int");

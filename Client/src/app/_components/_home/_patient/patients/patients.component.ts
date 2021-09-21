@@ -16,7 +16,7 @@ export class PatientsComponent implements OnInit {
 
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
-  displayedColumns: string[] = ['name', 'telephone', 'address',  'birthday', 'gender', 'edit', 'delete'];
+  displayedColumns: string[] = ['name', 'telephone', 'address', 'age', 'code', 'gender', 'edit', 'delete'];
   patients: Patient[];
   dataSource = new MatTableDataSource<Patient>();
 

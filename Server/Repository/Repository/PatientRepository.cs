@@ -34,7 +34,7 @@ namespace Repository.Repository
         }
         public async Task<Patient> Get(string telephone)
         {
-            return await context.Patients.AsNoTracking().SingleOrDefaultAsync(s => s.Telephone == telephone);
+            return await context.Patients.AsNoTracking().FirstOrDefaultAsync(s => s.Telephone == telephone);
         }
         public void Remove(Patient patient)
         {

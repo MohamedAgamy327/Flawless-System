@@ -4,7 +4,7 @@ import {
   HomeComponent, LandingComponent, UsersComponent, ItemsComponent,
   MedicinesComponent, PatientsComponent, SpendingsComponent, TestsComponent, DiagnosissComponent,
   FrequencysComponent, MedicineTypesComponent, SuppliesComponent, SupplyAddComponent,
-  SupplyShowComponent, SupplyDeleteComponent, SupplyEditComponent
+  SupplyShowComponent, SupplyDeleteComponent, SupplyEditComponent, WaitingsComponent, CheckingAddComponent
 } from '.';
 
 const routes: Routes = [
@@ -41,6 +41,9 @@ const routes: Routes = [
         path: 'items', component: ItemsComponent
       },
       {
+        path: 'waitings', component: WaitingsComponent
+      },
+      {
         path: 'supplies', component: SuppliesComponent
       },
       {
@@ -54,6 +57,9 @@ const routes: Routes = [
       },
       {
         path: 'supplies/edit/:id', component: SupplyEditComponent
+      },
+      {
+        path: 'checking/add/:patientId', component: CheckingAddComponent
       },
       {
         path: '', redirectTo: '', pathMatch: 'full'

@@ -25,7 +25,9 @@ export class PatientEditDialogComponent {
       telephone: [this.data.telephone],
       address: [this.data.address],
       gender: [this.data.gender, Validators.required],
-      birthday: [this.data.birthday]
+      age: [this.data.age],
+      code: [this.data.code],
+    //  birthday: [this.data.birthday]
     });
   }
 

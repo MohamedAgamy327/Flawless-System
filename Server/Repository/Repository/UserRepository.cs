@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Repository.IRepository;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Utilities.Password;
+using Utilities.StaticHelpers;
 
 namespace Repository.Repository
 {

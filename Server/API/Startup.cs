@@ -127,8 +127,7 @@ namespace API
                 });
             }
 
-            app.UseStaticFiles();
-            app.UseDefaultFiles();
+  
 
             //app.UseHttpsRedirection();
 
@@ -143,6 +142,10 @@ namespace API
                 }
 
             });
+
+            app.UseStaticFiles();
+            app.UseDefaultFiles();
+
 
             app.UseRouting();
 

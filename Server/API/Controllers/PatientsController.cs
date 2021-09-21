@@ -6,6 +6,11 @@ using Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Repository.IRepository;
 using Repository.UnitOfWork;
+using System.IO;
+using OfficeOpenXml;
+using API.DTO;
+using API.Extensions;
+using Domain.Enums;
 
 namespace API.Controllers
 {
@@ -22,6 +27,29 @@ namespace API.Controllers
             this.mapper = mapper;
             this.unitOfWork = unitOfWork;
             this.patientRepository = patientRepository;
+        }
+
+        [HttpPost("upload")]
+        public async Task<IActionResult> Upload()
+        {
+            FileInfo file = new FileInfo(@"D:\1.xlsx");
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+            using ExcelPackage package = new ExcelPackage(file);
+            ExcelWorksheet workSheet = package.Workbook.Worksheets[0];
+
+            int totalRows = workSheet.Dimension.Rows;
+            for (int i = 2; i <= totalRows; i++)
+            {
+                Patient patient = new Patient
+                {
+                    Name = workSheet.ConvertToString(i, 1),
+                    Telephone = workSheet.ConvertToString(i, 2),
+                    Gender = workSheet.ConvertToString(i, 3) == "ذكر" ? GenderEnum.Male : GenderEnum.Female
+                };
+                await patientRepository.Add(patient).ConfigureAwait(true);
+                await unitOfWork.CompleteAsync().ConfigureAwait(true);
+            }
+            return Ok();
         }
 
         [HttpPost]
@@ -59,7 +87,7 @@ namespace API.Controllers
             return Ok(mapper.Map<PatientForGetDTO>(await patientRepository.Get(id).ConfigureAwait(true)));
         }
 
-        [Route("{telephone}")]
+        [Route("bytelephone/{telephone}")]
         [HttpGet]
         public async Task<IActionResult> Get(string telephone)
         {

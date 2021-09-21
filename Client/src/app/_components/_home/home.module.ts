@@ -19,7 +19,8 @@ import {
   DiagnosissComponent, DiagnosisAddDialogComponent, DiagnosisEditDialogComponent, DiagnosisDeleteDialogComponent,
   FrequencysComponent, FrequencyAddDialogComponent, FrequencyEditDialogComponent, FrequencyDeleteDialogComponent,
   MedicineTypeAddDialogComponent, MedicineTypeDeleteDialogComponent, MedicineTypeEditDialogComponent, MedicineTypesComponent,
-  SupplyAddComponent, SuppliesComponent, SupplyShowComponent, SupplyDeleteComponent, SupplyEditComponent
+  SupplyAddComponent, SuppliesComponent, SupplyShowComponent, SupplyDeleteComponent, SupplyEditComponent,
+  WaitingsComponent, PatientInformationComponent, CheckingAddComponent
 } from '.';
 
 @NgModule({
@@ -39,7 +40,8 @@ import {
     DiagnosissComponent, DiagnosisAddDialogComponent, DiagnosisEditDialogComponent, DiagnosisDeleteDialogComponent,
     FrequencysComponent, FrequencyAddDialogComponent, FrequencyEditDialogComponent, FrequencyDeleteDialogComponent,
     MedicineTypeAddDialogComponent, MedicineTypeDeleteDialogComponent, MedicineTypeEditDialogComponent, MedicineTypesComponent,
-    SuppliesComponent, SupplyAddComponent, SupplyShowComponent, SupplyDeleteComponent, SupplyEditComponent
+    SuppliesComponent, SupplyAddComponent, SupplyShowComponent, SupplyDeleteComponent, SupplyEditComponent,
+    WaitingsComponent, PatientInformationComponent, CheckingAddComponent
   ],
   entryComponents: [
     UserChangePasswordDialogComponent, UserDeleteDialogComponent,

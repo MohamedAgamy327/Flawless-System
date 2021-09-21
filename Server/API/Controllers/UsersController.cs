@@ -7,7 +7,7 @@ using Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Repository.IRepository;
 using Repository.UnitOfWork;
-using Utilities.Password;
+using Utilities.StaticHelpers;
 
 namespace API.Controllers
 {
@@ -27,6 +27,7 @@ namespace API.Controllers
             this.unitOfWork = unitOfWork;
             this.userRepository = userRepository;
         }
+
 
         [HttpPost]
         public async Task<IActionResult> Post(UserForAddDTO model)

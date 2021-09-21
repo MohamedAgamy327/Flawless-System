@@ -7,5 +7,11 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <_PublishTargetUrl>D:\Deploy</_PublishTargetUrl>
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAHUIGLrDXz0WmFJGSqN21/gAAAAACAAAAAAAQZgAAAAEAACAAAAB/e/0Pm8Aj8+3AIYmThbVLUVU0hBZpVaUBM/ybYApv+QAAAAAOgAAAAAIAACAAAABg461l7qpeFmCpA2lDleOU/8POCOisWWnYXeSzvLhNGiAAAAD2s+FjEAh0TDd+PEf/7uOwe73qx7ov0FpWM2wH0+C+LEAAAACT8R6gQNqIBKjgjSdbzMvnitKTTwAZUrAGFEE9jKRuNkotmzlRXUdMMPyZMrif+b8ooaLAg4wUDBrC8g2P6A3/</EncryptedPassword>
   </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=SQL5080.site4now.net%3bInitial Catalog=DB_A672F7_Ramadan1001%3bUser Id=DB_A672F7_Ramadan1001_admin%3bPassword=Re1411993%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
 </Project>
